@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan Penjualan - KasirKu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <div class="app-wrapper">
+    <aside class="app-sidebar" id="app-sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-badge-icon">K</div>
+        <div>
+          <div class="brand-text-name">KasirKu</div>
+          <div class="brand-text-sub">Toko Kelontong Berkah</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="/" class="nav-link-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg><span>Dashboard</span></a>
+        <a href="/kasir" class="nav-link-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span>Kasir (Transaksi)</span></a>
+        <a href="/produk" class="nav-link-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg><span>Data Produk</span></a>
+        <a href="/stok" class="nav-link-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg><span>Persediaan & Stok</span></a>
+        <a href="/laporan" class="nav-link-item active"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg><span>Laporan Penjualan</span></a>
+        <a href="/pengaturan" class="nav-link-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg><span>Pengaturan Toko</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <span class="user-name">Kasir</span>
+          <span class="user-role">Petugas Toko</span>
+        </div>
+        <button class="btn-logout" onclick="handleLogout()" title="Keluar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg></button>
+      </div>
+    </aside>
+
+    <main class="app-content">
+      <div class="top-mobile-bar">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div class="brand-badge-icon" style="width: 32px; height: 32px; font-size: 0.9rem;">K</div>
+          <span class="mobile-brand-title">Laporan</span>
+        </div>
+        <button class="btn btn-secondary" onclick="exportCsv()" style="padding: 4px 10px; font-size: 0.8125rem;">Export CSV</button>
+      </div>
+
+      <div class="page-container">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Laporan Penjualan</h1>
+            <p class="page-subtitle">Rekapitulasi omzet penjualan, laba kotor, dan riwayat transaksi toko.</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn btn-secondary" onclick="exportCsv()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Export CSV
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Periode & Kasir -->
+        <div class="card" style="margin-bottom: 1.25rem; padding: 1rem;">
+          <div style="display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap;">
+            <div>
+              <label class="form-label" for="filter-start-date">Tanggal Mulai</label>
+              <input type="date" id="filter-start-date" class="form-control" style="width: 160px;">
+            </div>
+            <div>
+              <label class="form-label" for="filter-end-date">Tanggal Selesai</label>
+              <input type="date" id="filter-end-date" class="form-control" style="width: 160px;">
+            </div>
+            <div>
+              <label class="form-label" for="filter-cashier">Filter Kasir</label>
+              <select id="filter-cashier" class="form-control" style="width: 170px;" onchange="loadSalesReport()">
+                <option value="">Semua Kasir</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" onclick="loadSalesReport()">Filter Laporan</button>
+            <button class="btn btn-secondary" onclick="setFilterToday()">Hari Ini</button>
+            <button class="btn btn-secondary" onclick="setFilterThisMonth()">Bulan Ini</button>
+          </div>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon primary">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-label">Total Omzet Penjualan</span>
+              <span class="stat-value mono" id="rep-total-revenue">Rp 0</span>
+            </div>
+          </div>
+
+          <div class="stat-card owner-only">
+            <div class="stat-icon success">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-label">Estimasi Laba Kotor</span>
+              <span class="stat-value mono" id="rep-gross-profit" style="color: var(--color-success);">Rp 0</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon primary">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-label">Total Transaksi Selesai</span>
+              <span class="stat-value mono" id="rep-tx-count">0</span>
+            </div>
+          </div>
+
+          <div class="stat-card" id="rep-drawer-card">
+            <div class="stat-icon success">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-label">Kas Fisik Laci Hari Ini</span>
+              <span class="stat-value mono" id="rep-drawer-cash" style="color: var(--color-success);">Rp 0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabel Riwayat Transaksi -->
+        <div class="card table-card">
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>No. Invoice</th>
+                  <th>Waktu Transaksi</th>
+                  <th>Kasir</th>
+                  <th>Konsumen</th>
+                  <th>Metode</th>
+                  <th class="mono">Total Tagihan</th>
+                  <th class="mono">Uang Diterima</th>
+                  <th style="text-align: right;">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="sales-report-table-body">
+                <tr><td colspan="8" style="text-align: center; padding: 2rem;">Memuat data laporan...</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Pagination Controls Transaksi -->
+          <div id="sales-pagination-container" style="display: none; justify-content: space-between; align-items: center; padding: 12px 16px; border-top: 1px solid var(--color-border); background: var(--color-surface); flex-wrap: wrap; gap: 8px;">
+            <div style="font-size: 0.8125rem; color: var(--color-text-muted);">
+              Menampilkan <span id="pag-sales-start" style="font-weight: 600; color: var(--color-text);">1</span> - <span id="pag-sales-end" style="font-weight: 600; color: var(--color-text);">10</span> dari <span id="pag-sales-total" style="font-weight: 600; color: var(--color-text);">0</span> transaksi
+            </div>
+            <div id="sales-pagination-buttons" style="display: flex; gap: 4px; align-items: center;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Bottom Nav -->
+      <nav class="mobile-bottom-nav">
+        <a href="/" class="mobile-tab"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg><span>Dashboard</span></a>
+        <a href="/kasir" class="mobile-tab"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span>Kasir</span></a>
+        <a href="/produk" class="mobile-tab"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path></svg><span>Produk</span></a>
+        <a href="/stok" class="mobile-tab"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg><span>Stok</span></a>
+        <a href="/laporan" class="mobile-tab active"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg><span>Laporan</span></a>
+      </nav>
+    </main>
+  </div>
+
+  <!-- MODAL: DETAIL TRANSAKSI & REPRINT STRUK -->
+  <div class="modal-overlay" id="modal-tx-detail" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 class="modal-title" id="tx-modal-title">Detail Transaksi</h2>
+        <button onclick="closeTxDetailModal()" style="font-size: 1.5rem; color: var(--color-text-muted);">&times;</button>
+      </div>
+      <div class="modal-body" style="background-color: #F8FAFC; padding: 1.5rem; display: flex; justify-content: center;">
+        <div class="receipt-paper" id="reprint-paper-area">
+          <div class="receipt-text-center">
+            <h3 style="font-size: 1.05rem; font-weight: 700; margin: 0;" id="dtl-store-name">Toko Kelontong Berkah</h3>
+            <p id="dtl-store-address" style="font-size: 0.72rem; color: #475569;"></p>
+            <p id="dtl-store-phone" style="font-size: 0.72rem; color: #475569;"></p>
+          </div>
+          <div class="receipt-divider"></div>
+          <div class="receipt-row" style="font-size: 0.72rem;">
+            <span id="dtl-invoice"></span>
+            <span id="dtl-time"></span>
+          </div>
+          <div class="receipt-row" style="font-size: 0.72rem;">
+            <span id="dtl-cashier"></span>
+            <span id="dtl-customer"></span>
+          </div>
+          <div class="receipt-row" style="font-size: 0.72rem;">
+            <span id="dtl-payment-method">Pembayaran: Tunai</span>
+          </div>
+          <div class="receipt-divider"></div>
+          <div id="dtl-items-list"></div>
+          <div class="receipt-divider"></div>
+          <div class="receipt-row" style="font-weight: 700;">
+            <span>TOTAL:</span>
+            <span id="dtl-total"></span>
+          </div>
+          <div class="receipt-row">
+            <span>Uang Diterima:</span>
+            <span id="dtl-cash"></span>
+          </div>
+          <div class="receipt-row">
+            <span>Kembalian:</span>
+            <span id="dtl-change"></span>
+          </div>
+          <div class="receipt-divider"></div>
+          <div class="receipt-text-center" style="font-size: 0.72rem;">
+            <p id="dtl-footer"></p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeTxDetailModal()">Tutup</button>
+        <button class="btn btn-primary" onclick="window.print()" style="display: inline-flex; align-items: center; gap: 6px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Cetak Struk Ulang</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+  <script>
+    let allTransactionsList = [];
+    let salesCurrentPage = 1;
+    const salesPageSize = 10;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadCashierFilterOptions();
+      setFilterToday();
+    });
+
+    async function loadCashierFilterOptions() {
+      try {
+        const res = await fetch('/api/auth/cashiers');
+        const data = await res.json();
+        if (data.success && Array.isArray(data.data)) {
+          const select = document.getElementById('filter-cashier');
+          if (select) {
+            select.innerHTML = '<option value="">Semua Kasir</option>' +
+              data.data.map(c => `<option value="${c.id}">${c.name} (${c.role === 'pemilik' ? 'Pemilik' : 'Kasir'})</option>`).join('');
+          }
+        }
+      } catch (_) {}
+    }
+
+    function setFilterToday() {
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('filter-start-date').value = today;
+      document.getElementById('filter-end-date').value = today;
+      loadSalesReport();
+    }
+
+    function setFilterThisMonth() {
+      const now = new Date();
+      const firstDay = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().split('T')[0];
+      const today = now.toISOString().split('T')[0];
+      document.getElementById('filter-start-date').value = firstDay;
+      document.getElementById('filter-end-date').value = today;
+      loadSalesReport();
+    }
+
+    async function loadSalesReport() {
+      const start = document.getElementById('filter-start-date').value;
+      const end = document.getElementById('filter-end-date').value;
+      const cashierId = document.getElementById('filter-cashier')?.value;
+
+      const tbody = document.getElementById('sales-report-table-body');
+      tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 2rem;">Memuat data laporan...</td></tr>';
+
+      try {
+        let url = '/api/reports/sales?';
+        if (start) url += `start_date=${start}&`;
+        if (end) url += `end_date=${end}&`;
+        if (cashierId) url += `cashier_id=${cashierId}&`;
+
+        const [salesRes, cashRes] = await Promise.all([
+          fetch(url),
+          fetch('/api/cash/summary')
+        ]);
+        const data = await salesRes.json();
+        const cashData = await cashRes.json();
+
+        if (cashData.success && document.getElementById('rep-drawer-cash')) {
+          document.getElementById('rep-drawer-cash').textContent = formatRupiah(cashData.data.expected_drawer_cash || 0);
+        }
+
+        if (data.success) {
+          const sum = data.data.summary;
+          document.getElementById('rep-total-revenue').textContent = formatRupiah(sum.total_revenue);
+          document.getElementById('rep-gross-profit').textContent = formatRupiah(sum.gross_profit);
+          document.getElementById('rep-tx-count').textContent = sum.transaction_count;
+
+          allTransactionsList = data.data.transactions || [];
+          salesCurrentPage = 1;
+          renderPaginatedSales();
+        } else {
+          tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; color: var(--color-danger); padding: 2rem;">Gagal memuat laporan.</td></tr>';
+        }
+      } catch (err) {
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; color: var(--color-danger); padding: 2rem;">Gagal memuat laporan.</td></tr>';
+      }
+    }
+
+    function renderPaginatedSales() {
+      const tbody = document.getElementById('sales-report-table-body');
+      const pagContainer = document.getElementById('sales-pagination-container');
+      const pagBtns = document.getElementById('sales-pagination-buttons');
+
+      const total = allTransactionsList.length;
+
+      if (total === 0) {
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 2rem; color: var(--color-text-muted);">Tidak ada transaksi pada periode ini.</td></tr>';
+        if (pagContainer) pagContainer.style.display = 'none';
+        return;
+      }
+
+      const totalPages = Math.ceil(total / salesPageSize);
+      if (salesCurrentPage > totalPages) salesCurrentPage = totalPages;
+      if (salesCurrentPage < 1) salesCurrentPage = 1;
+
+      const startIndex = (salesCurrentPage - 1) * salesPageSize;
+      const endIndex = Math.min(startIndex + salesPageSize, total);
+      const currentItems = allTransactionsList.slice(startIndex, endIndex);
+
+      tbody.innerHTML = currentItems.map(t => {
+        const isQris = (t.payment_method || '').toLowerCase() === 'qris';
+        const payBadge = isQris 
+          ? '<span class="badge badge-qris" style="display:inline-flex;align-items:center;gap:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> QRIS</span>'
+          : '<span class="badge badge-success" style="display:inline-flex;align-items:center;gap:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/></svg> Tunai</span>';
+
+        return `
+          <tr>
+            <td class="mono font-bold">${t.invoice_number}</td>
+            <td style="font-size: 0.8125rem;">${formatDateIndo(t.transaction_date)}</td>
+            <td>${t.cashier_name || 'Kasir'}</td>
+            <td><span class="badge badge-primary" style="font-weight: 500;">${t.customer_name || 'Umum'}</span></td>
+            <td>${payBadge}</td>
+            <td class="mono font-bold">${formatRupiah(t.total_amount)}</td>
+            <td class="mono">${formatRupiah(t.cash_received)}</td>
+            <td style="text-align: right;">
+              <button class="btn btn-secondary btn-sm" onclick="viewDetail('${t.id}')">Detail Struk</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      // Kontrol pagination jika data > 10
+      if (total > salesPageSize) {
+        if (pagContainer) pagContainer.style.display = 'flex';
+        document.getElementById('pag-sales-start').textContent = startIndex + 1;
+        document.getElementById('pag-sales-end').textContent = endIndex;
+        document.getElementById('pag-sales-total').textContent = total;
+
+        let btnsHtml = `
+          <button type="button" class="btn btn-secondary btn-sm" style="padding: 4px 10px; font-size: 0.75rem;" onclick="goToSalesPage(${salesCurrentPage - 1})" ${salesCurrentPage === 1 ? 'disabled' : ''}>
+            Sebelumnya
+          </button>
+        `;
+
+        for (let i = 1; i <= totalPages; i++) {
+          btnsHtml += `
+            <button type="button" class="btn ${i === salesCurrentPage ? 'btn-primary' : 'btn-secondary'} btn-sm" style="padding: 4px 10px; min-width: 32px; font-size: 0.75rem;" onclick="goToSalesPage(${i})">
+              ${i}
+            </button>
+          `;
+        }
+
+        btnsHtml += `
+          <button type="button" class="btn btn-secondary btn-sm" style="padding: 4px 10px; font-size: 0.75rem;" onclick="goToSalesPage(${salesCurrentPage + 1})" ${salesCurrentPage === totalPages ? 'disabled' : ''}>
+            Selanjutnya
+          </button>
+        `;
+
+        if (pagBtns) pagBtns.innerHTML = btnsHtml;
+      } else {
+        if (pagContainer) pagContainer.style.display = 'none';
+      }
+    }
+
+    function goToSalesPage(page) {
+      salesCurrentPage = page;
+      renderPaginatedSales();
+    }
+
+    function exportCsv() {
+      const start = document.getElementById('filter-start-date').value;
+      const end = document.getElementById('filter-end-date').value;
+      const cashierId = document.getElementById('filter-cashier')?.value;
+      let url = '/api/reports/export-csv?';
+      if (start) url += `start_date=${start}&`;
+      if (end) url += `end_date=${end}&`;
+      if (cashierId) url += `cashier_id=${cashierId}&`;
+      window.open(url, '_blank');
+    }
+
+    async function viewDetail(txId) {
+      try {
+        const res = await fetch(`/api/transactions/${txId}`);
+        const data = await res.json();
+        if (data.success) {
+          const t = data.data.transaction;
+          const store = data.data.store;
+          const items = data.data.items;
+
+          document.getElementById('dtl-store-name').textContent = store.store_name || 'Toko Kelontong';
+          document.getElementById('dtl-store-address').textContent = store.address || '';
+          document.getElementById('dtl-store-phone').textContent = store.phone ? `Telp: ${store.phone}` : '';
+          document.getElementById('dtl-invoice').textContent = t.invoice_number;
+          document.getElementById('dtl-time').textContent = formatDateIndo(t.transaction_date);
+          document.getElementById('dtl-cashier').textContent = `Kasir: ${t.cashier_name || 'Kasir'}`;
+          document.getElementById('dtl-customer').textContent = `Konsumen: ${t.customer_name || 'Umum'}`;
+          const isQris = (t.payment_method || '').toLowerCase() === 'qris';
+          document.getElementById('dtl-payment-method').textContent = `Pembayaran: ${isQris ? 'QRIS' : 'Tunai'}`;
+
+          document.getElementById('dtl-items-list').innerHTML = items.map(i => `
+            <div style="margin-bottom: 3px;">
+              <div style="font-weight: 700;">${i.product_name_snapshot}</div>
+              <div class="receipt-row">
+                <span>${formatDecimal(i.quantity)} ${i.unit_snapshot} x ${formatRupiah(i.unit_price)}</span>
+                <span>${formatRupiah(i.subtotal)}</span>
+              </div>
+            </div>
+          `).join('');
+
+          document.getElementById('dtl-total').textContent = formatRupiah(t.total_amount);
+          document.getElementById('dtl-cash').textContent = formatRupiah(t.cash_received);
+          document.getElementById('dtl-change').textContent = formatRupiah(t.change_amount);
+          document.getElementById('dtl-footer').textContent = store.receipt_footer || 'Terima kasih atas kunjungan Anda!';
+
+          document.getElementById('modal-tx-detail').style.display = 'flex';
+        }
+      } catch (err) {
+        showToast('Gagal memuat detail transaksi.', 'error');
+      }
+    }
+
+    function closeTxDetailModal() {
+      document.getElementById('modal-tx-detail').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

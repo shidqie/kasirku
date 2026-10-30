@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kasir - KasirKu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <div class="app-wrapper">
+    <!-- Desktop Sidebar -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-badge-icon">K</div>
+        <div>
+          <div class="brand-text-name">KasirKu</div>
+          <div class="brand-text-sub">Toko Kelontong Berkah</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="/" class="nav-link-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="/kasir" class="nav-link-item active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span>Kasir (Transaksi)</span>
+        </a>
+
+        <a href="/produk" class="nav-link-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+          </svg>
+          <span>Data Produk</span>
+        </a>
+
+        <a href="/stok" class="nav-link-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          </svg>
+          <span>Persediaan & Stok</span>
+        </a>
+
+        <a href="/laporan" class="nav-link-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          <span>Laporan Penjualan</span>
+        </a>
+
+        <a href="/pengaturan" class="nav-link-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+          <span>Pengaturan Toko</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-info" style="width: calc(100% - 36px);">
+          <label for="sidebar-select-cashier" style="font-size: 0.6875rem; color: var(--color-text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">Kasir Bertugas:</label>
+          <select id="sidebar-select-cashier" class="form-control" style="font-size: 0.8125rem; font-weight: 600; height: 32px; padding: 2px 6px; border: 1px solid var(--color-border); background: var(--color-surface); width: 100%; border-radius: var(--radius-sm);" onchange="onActiveCashierChanged(this.value)">
+            <option value="">Memuat kasir...</option>
+          </select>
+          <span class="user-role" id="kasir-user-role-badge" style="margin-top: 2px; font-size: 0.6875rem;">Sesi Kasir Aktif</span>
+        </div>
+        <button class="btn-logout" onclick="handleLogout()" title="Keluar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Kasir 2-Column Split Workspace -->
+    <main class="app-content">
+      <!-- Mobile Top Bar -->
+      <div class="top-mobile-bar">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div class="brand-badge-icon" style="width: 32px; height: 32px; font-size: 0.9rem;">K</div>
+          <div>
+            <div class="mobile-brand-title" style="font-size: 0.8125rem; line-height: 1.1;">KasirKu</div>
+            <select id="mobile-select-active-cashier" style="font-size: 0.7rem; border: none; background: transparent; color: var(--color-text-muted); font-weight: 600; padding: 0; outline: none; max-width: 110px;" onchange="onActiveCashierChanged(this.value)">
+              <option value="">Kasir</option>
+            </select>
+          </div>
+        </div>
+        <div style="display: flex; gap: 6px;">
+          <button type="button" class="btn btn-secondary" onclick="openModalAwalModal()" style="padding: 4px 8px; font-size: 0.75rem; display: inline-flex; align-items: center; gap: 4px;" title="Input Modal Awal Kembalian">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><circle cx="18" cy="12" r="1"/></svg>
+            <span>Modal</span>
+          </button>
+          <button type="button" class="btn btn-secondary" onclick="openCashFlowModal()" style="padding: 4px 8px; font-size: 0.75rem; display: inline-flex; align-items: center; gap: 4px;" title="Arus Kas & Modal Laci">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+            <span id="mobile-header-drawer-cash" class="mono font-bold">Rp 0</span>
+          </button>
+          <button class="btn btn-secondary" id="btn-open-cam-mobile" onclick="openCameraScannerModal()" style="padding: 4px 10px; font-size: 0.8125rem; display: inline-flex; align-items: center; gap: 4px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            <span>Scan</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="kasir-workspace">
+        <!-- LEFT: CATALOG & SEARCH -->
+        <section class="kasir-catalog-panel">
+          <!-- Search & Barcode Input -->
+          <div class="kasir-search-bar">
+            <div class="search-input-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="input-search-product" placeholder="Cari nama, kode, atau scan barcode lalu Enter..." autofocus autocomplete="off">
+            </div>
+            <button class="btn-scan-cam" id="btn-open-cam" onclick="openCameraScannerModal()" title="Scan Barcode via Kamera HP/Laptop">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+              </svg>
+              <span>Scan Kamera</span>
+            </button>
+
+            <!-- Dropdown Nama Kasir Aktif -->
+            <div class="cashier-select-container" style="display: inline-flex; align-items: center; gap: 6px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 2px 8px; height: 42px;" title="Pilih Nama Kasir yang Sedang Bertugas">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-primary); flex-shrink: 0;">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <label for="select-active-cashier" style="font-size: 0.75rem; color: var(--color-text-muted); font-weight: 600; white-space: nowrap; margin: 0;">Kasir:</label>
+              <select id="select-active-cashier" style="font-size: 0.8125rem; font-weight: 600; height: 36px; padding: 0 1.75rem 0 4px; border: none; background-color: transparent; cursor: pointer; color: var(--color-text); outline: none;" onchange="onActiveCashierChanged(this.value)">
+                <option value="">Memuat kasir...</option>
+              </select>
+            </div>
+
+            <button type="button" class="btn btn-secondary" onclick="openModalAwalModal()" title="Input Modal Awal Kembalian Kasir" style="white-space: nowrap; font-size: 0.8125rem; padding: 6px 12px; height: 42px; display: inline-flex; align-items: center; gap: 6px;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><circle cx="18" cy="12" r="1"/></svg>
+              <span>Modal Awal</span>
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="openCashFlowModal()" title="Kelola Arus Kas & Modal Laci Kasir" style="white-space: nowrap; font-size: 0.8125rem; padding: 6px 12px; height: 42px; display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+              <span>Kas Laci:</span>
+              <span class="mono" id="kasir-header-drawer-cash" style="font-weight: 700; color: var(--color-success); white-space: nowrap;">Rp 0</span>
+            </button>
+          </div>
+
+          <!-- Alert Banner: Peringatan Modal Awal Belum Diisi -->
+          <div id="banner-modal-awal-alert" style="display: none; margin-bottom: 0.75rem; background: #FEF3C7; border: 1px solid #FCD34D; border-radius: var(--radius-md); padding: 10px 14px; align-items: center; justify-content: space-between; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px; color: #92400E; font-size: 0.8125rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <div>
+                <strong>Modal Awal Kasir Hari Ini Belum Diisi!</strong>
+                <div style="font-size: 0.75rem; color: #B45309;">Silakan catat uang modal kembalian pagi untuk memulai transaksi kasir.</div>
+              </div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="openModalAwalModal()" style="padding: 5px 12px; font-size: 0.75rem; white-space: nowrap;">
+              + Input Modal Awal
+            </button>
+          </div>
+
+          <!-- Category Filter Pills -->
+          <div class="category-filter-row" id="category-filter-row">
+            <button class="cat-pill active" data-id="all">Semua</button>
+          </div>
+
+          <!-- Product Grid -->
+          <div class="product-cards-grid" id="product-cards-grid">
+            <!-- Dynamically populated -->
+          </div>
+        </section>
+
+        <!-- RIGHT: KERANJANG BELANJA & BILLING -->
+        <aside class="kasir-cart-panel">
+          <div class="cart-header">
+            <div class="cart-title">Keranjang Belanja</div>
+            <button class="btn-reset-cart" id="btn-reset-cart" title="Kosongkan Keranjang">Kosongkan</button>
+          </div>
+
+          <!-- Input Nama Konsumen / Pelanggan -->
+          <div class="cart-customer-bar">
+            <div class="cart-customer-top">
+              <span class="cart-customer-label">Konsumen:</span>
+              <button type="button" class="btn-customer-quick" onclick="setQuickCustomer('Umum')">Umum</button>
+            </div>
+            <div class="cart-customer-input-wrap">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <input type="text" id="input-customer-name" class="cart-customer-input" placeholder="Nama Pelanggan (cth: Umum / Pak Budi)" value="Umum" autocomplete="off" oninput="syncCustomerInput(this.value)">
+            </div>
+          </div>
+
+          <!-- Cart Item Rows -->
+          <div class="cart-items-list" id="cart-items-list">
+            <!-- Dynamically populated -->
+          </div>
+
+          <!-- Summary & Pay Button -->
+          <div class="cart-summary-footer">
+            <div class="cart-total-row">
+              <span class="total-text-label">Total Belanja:</span>
+              <span class="total-text-amount mono" id="cart-total-amount">Rp 0</span>
+            </div>
+            <button class="btn-pay-action" id="btn-open-payment" disabled>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+              <span>Bayar Transaksi</span>
+            </button>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Mobile Bottom Nav -->
+      <nav class="mobile-bottom-nav">
+        <a href="/" class="mobile-tab">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="/kasir" class="mobile-tab active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span>Kasir</span>
+        </a>
+        <a href="/produk" class="mobile-tab">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path></svg>
+          <span>Produk</span>
+        </a>
+        <a href="/stok" class="mobile-tab">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+          <span>Stok</span>
+        </a>
+        <a href="/laporan" class="mobile-tab">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <span>Laporan</span>
+        </a>
+      </nav>
+    </main>
+  </div>
+
+  <!-- MODAL: PEMBAYARAN KASIR -->
+  <div class="modal-overlay" id="modal-payment" style="display: none;">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h2 class="modal-title">Pembayaran Transaksi</h2>
+        <button type="button" onclick="closePaymentModal()" style="font-size: 1.5rem; color: var(--color-text-muted);">&times;</button>
+      </div>
+      <div class="modal-body">
+        <!-- Metode Pembayaran Tabs -->
+        <div class="pay-methods-tabs">
+          <button type="button" class="pay-tab-btn active" id="tab-pay-cash" onclick="switchPaymentMethod('cash')" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+            <span>Tunai (Cash)</span>
+          </button>
+          <button type="button" class="pay-tab-btn" id="tab-pay-qris" onclick="switchPaymentMethod('qris')" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            <span>QRIS / Non-Tunai</span>
+          </button>
+        </div>
+
+        <!-- Pilihan Kasir Bertugas & Nama Konsumen -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem;">
+          <div class="form-group" style="margin-bottom: 0;">
+            <label class="form-label" for="select-pay-cashier" style="margin-bottom: 4px; font-size: 0.8125rem;">Kasir Bertugas</label>
+            <select id="select-pay-cashier" class="form-control" style="font-weight: 600; height: 38px;" onchange="onActiveCashierChanged(this.value)">
+              <option value="">Memuat kasir...</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom: 0;">
+            <label class="form-label" for="pay-modal-customer" style="margin-bottom: 4px; font-size: 0.8125rem;">Konsumen</label>
+            <input type="text" id="pay-modal-customer" class="form-control" style="font-weight: 500; height: 38px;" placeholder="cth: Umum / Budi" value="Umum" oninput="syncCustomerInput(this.value)">
+          </div>
+        </div>
+
+        <!-- Total Tagihan -->
+        <div style="margin-bottom: 1rem; text-align: center; background: #F8FAFC; padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+          <span style="font-size: 0.8125rem; color: var(--color-text-muted);">Total Belanja:</span>
+          <div class="mono" id="pay-total-amount" style="font-size: 2rem; font-weight: 800; color: var(--color-primary);">Rp 0</div>
+          <div id="modal-drawer-cash-hint" style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 4px; display: flex; align-items: center; justify-content: center; gap: 4px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/></svg>
+            <span>Saldo Fisik di Laci:</span>
+            <strong class="mono" id="pay-modal-drawer-val">Rp 0</strong>
+          </div>
+        </div>
+
+        <!-- PANEL TUNAI -->
+        <div id="panel-pay-cash">
+          <div class="form-group" style="margin-bottom: 0.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <label class="form-label" for="input-cash-amount" style="margin-bottom: 0;">Uang Diterima (Rp)</label>
+              <button type="button" class="btn btn-secondary" onclick="clearCashAmount()" style="padding: 2px 8px; font-size: 0.75rem; font-weight: 600;">
+                Reset (C)
+              </button>
+            </div>
+            <input type="number" id="input-cash-amount" class="form-control mono" placeholder="0" style="height: 48px; font-size: 1.35rem; font-weight: 700;" oninput="onCashInputChanged(this.value)">
+          </div>
+
+          <!-- Tambah Uang Lembaran Cepat (+2rb, +5rb, +10rb, dll) -->
+          <div style="margin-bottom: 0.75rem;">
+            <div style="font-size: 0.75rem; color: var(--color-text-muted); margin-bottom: 4px;">Tambah Nominal Lembaran:</div>
+            <div class="bill-add-row">
+              <button type="button" class="chip-bill mono" onclick="addCashAmount(2000)">+2.000</button>
+              <button type="button" class="chip-bill mono" onclick="addCashAmount(5000)">+5.000</button>
+              <button type="button" class="chip-bill mono" onclick="addCashAmount(10000)">+10.000</button>
+              <button type="button" class="chip-bill mono" onclick="addCashAmount(20000)">+20.000</button>
+              <button type="button" class="chip-bill mono" onclick="addCashAmount(50000)">+50.000</button>
+              <button type="button" class="chip-bill mono" onclick="addCashAmount(100000)">+100.000</button>
+            </div>
+          </div>
+
+          <!-- Tombol Pecahan Cepat Dinamis -->
+          <div style="margin-bottom: 0.75rem;">
+            <div style="font-size: 0.75rem; color: var(--color-text-muted); margin-bottom: 4px;">Rekomendasi Uang Pas / Pembulatan:</div>
+            <div class="quick-cash-grid" id="quick-cash-container">
+              <button type="button" class="chip-cash" onclick="setQuickCash('exact')">Uang Pas</button>
+              <button type="button" class="chip-cash mono" onclick="setQuickCash(20000)">20.000</button>
+              <button type="button" class="chip-cash mono" onclick="setQuickCash(50000)">50.000</button>
+              <button type="button" class="chip-cash mono" onclick="setQuickCash(100000)">100.000</button>
+            </div>
+          </div>
+
+          <!-- Box Kembalian -->
+          <div class="change-box" id="change-box">
+            <span class="change-label">Kembalian:</span>
+            <span class="change-val mono" id="change-val-amount">Rp 0</span>
+          </div>
+
+          <!-- Saran Pecahan Uang Kembalian -->
+          <div id="change-denominations-guide" style="display: none; margin-top: 0.5rem; padding: 8px 10px; background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: var(--radius-sm); font-size: 0.75rem; color: #1E40AF; line-height: 1.4;">
+            <div style="display: flex; align-items: center; gap: 4px; font-weight: 700; margin-bottom: 2px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2v1"/><path d="M12 7a5 5 0 0 0-5 5c0 2 1.5 3 2.5 4h5c1-1 2.5-2 2.5-4a5 5 0 0 0-5-5z"/></svg>
+              <span>Saran Pecahan Kembalian:</span>
+            </div>
+            <span id="change-denominations-text" class="mono">1x Rp 20.000 • 1x Rp 5.000</span>
+          </div>
+
+          <!-- Warning jika kembalian melebihi kas laci -->
+          <div id="drawer-cash-warning" style="display: none; margin-top: 0.5rem; padding: 8px 10px; background: #FEF2F2; border: 1px solid #FECACA; border-radius: var(--radius-sm); font-size: 0.75rem; color: var(--color-danger); line-height: 1.4;">
+            <div style="display: flex; align-items: flex-start; gap: 6px;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <span><strong>Perhatian:</strong> Uang kembalian melebihi estimasi kas di laci kasir saat ini. Siapkan modal tambahan jika perlu.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL QRIS -->
+        <div id="panel-pay-qris" style="display: none; text-align: center; padding: 0.5rem 0;">
+          <div style="background: #FFFFFF; border: 2px dashed var(--color-primary); border-radius: var(--radius-md); padding: 1.25rem; display: inline-block; margin-bottom: 0.75rem;">
+            <svg width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin: 0 auto; color: #1E293B;">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+              <rect x="5" y="5" width="3" height="3" fill="currentColor"></rect>
+              <rect x="16" y="5" width="3" height="3" fill="currentColor"></rect>
+              <rect x="5" y="16" width="3" height="3" fill="currentColor"></rect>
+              <line x1="10" y1="7" x2="10" y2="7.01"></line>
+              <line x1="14" y1="10" x2="14" y2="10.01"></line>
+              <line x1="18" y1="10" x2="18" y2="10.01"></line>
+              <line x1="10" y1="14" x2="10" y2="17"></line>
+              <line x1="14" y1="17" x2="17" y2="17"></line>
+            </svg>
+            <div style="font-weight: 700; font-size: 0.875rem; margin-top: 6px; color: var(--color-text);">QRIS Toko KasirKu</div>
+            <div style="font-size: 0.75rem; color: var(--color-text-muted);">BCA, Mandiri, BRI, GoPay, OVO, ShopeePay</div>
+          </div>
+          <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin: 0 auto; max-width: 320px;">
+            Pelanggan membayar total tagihan <strong id="qris-total-amount" class="mono" style="color: var(--color-primary);">Rp 0</strong>. Bebas uang kembalian.
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closePaymentModal()">Batal</button>
+        <button type="button" class="btn btn-primary" id="btn-confirm-checkout" onclick="processCheckout()" disabled>
+          Konfirmasi & Selesai
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: INPUT MODAL AWAL KASIR -->
+  <div class="modal-overlay" id="modal-input-modal-awal" style="display: none;">
+    <div class="modal-card" style="max-width: 440px;">
+      <div class="modal-header">
+        <h2 class="modal-title" style="display: inline-flex; align-items: center; gap: 8px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-primary);"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><circle cx="18" cy="12" r="1"/></svg>
+          <span>Input Modal Awal Kasir</span>
+        </h2>
+        <button type="button" onclick="closeModalAwalModal()" style="font-size: 1.5rem; color: var(--color-text-muted);">&times;</button>
+      </div>
+      <form id="form-modal-awal" onsubmit="submitModalAwal(event)">
+        <div class="modal-body" style="padding: 1.25rem;">
+          <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin-bottom: 1rem; line-height: 1.4;">
+            Masukkan uang receh/modal awal di laci kasir saat buka toko pagi ini untuk kembalian pelanggan.
+          </p>
+
+          <div class="form-group" style="margin-bottom: 0.75rem;">
+            <label class="form-label" for="select-modal-awal-cashier">Nama Kasir / Pemegang Laci</label>
+            <select id="select-modal-awal-cashier" class="form-control" style="height: 40px; font-weight: 600;" required onchange="onActiveCashierChanged(this.value)">
+              <option value="">Memuat kasir...</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0.75rem;">
+            <label class="form-label" for="input-modal-awal-amount">Nominal Uang Modal (Rp)</label>
+            <input type="number" id="input-modal-awal-amount" class="form-control mono" placeholder="Contoh: 100000" min="1" style="height: 48px; font-size: 1.35rem; font-weight: 700;" required>
+          </div>
+
+          <!-- Quick Nominal Chips -->
+          <div style="margin-bottom: 1rem;">
+            <div style="font-size: 0.75rem; color: var(--color-text-muted); margin-bottom: 6px;">Pilih Cepat Nominal:</div>
+            <div class="quick-cash-grid">
+              <button type="button" class="chip-cash mono" onclick="setQuickModalAwal(50000)">50.000</button>
+              <button type="button" class="chip-cash mono" onclick="setQuickModalAwal(100000)">100.000</button>
+              <button type="button" class="chip-cash mono" onclick="setQuickModalAwal(150000)">150.000</button>
+              <button type="button" class="chip-cash mono" onclick="setQuickModalAwal(200000)">200.000</button>
+              <button type="button" class="chip-cash mono" onclick="setQuickModalAwal(300000)">300.000</button>
+              <button type="button" class="chip-cash mono" onclick="setQuickModalAwal(500000)">500.000</button>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0.5rem;">
+            <label class="form-label" for="input-modal-awal-notes">Keterangan / Catatan Shift</label>
+            <input type="text" id="input-modal-awal-notes" class="form-control" value="Modal awal kembalian pagi" placeholder="Catatan modal">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeModalAwalModal()">Batal</button>
+          <button type="submit" class="btn btn-primary" id="btn-save-modal-awal">
+            Simpan Modal Awal
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: KELOLA ARUS KAS & MODAL LACI KASIR -->
+  <div class="modal-overlay" id="modal-cash-flow" style="display: none;">
+    <div class="modal-card" style="max-width: 580px;">
+      <div class="modal-header">
+        <h2 class="modal-title">Arus Kas & Modal Laci Kasir</h2>
+        <button type="button" onclick="closeCashFlowModal()" style="font-size: 1.5rem; color: var(--color-text-muted);">&times;</button>
+      </div>
+      <div class="modal-body" style="max-height: 80vh; overflow-y: auto;">
+        <!-- Ringkasan Saldo Laci -->
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 1rem;">
+          <div style="background: #F8FAFC; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 10px;">
+            <div style="font-size: 0.75rem; color: var(--color-text-muted);">Modal Awal Hari Ini</div>
+            <div class="mono" id="cf-summary-modal-awal" style="font-size: 1.15rem; font-weight: 700; color: var(--color-primary);">Rp 0</div>
+          </div>
+          <div style="background: #F8FAFC; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 10px;">
+            <div style="font-size: 0.75rem; color: var(--color-text-muted);">Penjualan Tunai</div>
+            <div class="mono" id="cf-summary-sales" style="font-size: 1.15rem; font-weight: 700; color: var(--color-success);">Rp 0</div>
+          </div>
+          <div style="background: #F8FAFC; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 10px;">
+            <div style="font-size: 0.75rem; color: var(--color-text-muted);">Kas Masuk Lainnya</div>
+            <div class="mono" id="cf-summary-kas-masuk" style="font-size: 1.15rem; font-weight: 700; color: #0284C7;">Rp 0</div>
+          </div>
+          <div style="background: #F8FAFC; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 10px;">
+            <div style="font-size: 0.75rem; color: var(--color-text-muted);">Kas Keluar (Operasional)</div>
+            <div class="mono" id="cf-summary-kas-keluar" style="font-size: 1.15rem; font-weight: 700; color: var(--color-danger);">Rp 0</div>
+          </div>
+        </div>
+
+        <!-- Total Saldo Fisik Laci Kasir -->
+        <div style="background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: var(--radius-md); padding: 12px; text-align: center; margin-bottom: 1.25rem;">
+          <div style="font-size: 0.8125rem; font-weight: 600; color: #065F46;">Estimasi Uang Fisik di Laci Kasir:</div>
+          <div class="mono" id="cf-summary-expected-drawer" style="font-size: 1.75rem; font-weight: 800; color: #047857; margin-top: 2px;">Rp 0</div>
+          <div style="font-size: 0.75rem; color: #065F46; margin-top: 2px;">(Modal Awal + Penjualan Tunai + Kas Masuk - Kas Keluar)</div>
+        </div>
+
+        <!-- Form Catat Arus Kas Baru -->
+        <div style="border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem; background: var(--color-surface);">
+          <h3 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem;">+ Catat Arus Kas / Modal Baru</h3>
+          <form id="form-cash-flow" onsubmit="submitCashFlow(event)">
+            <div class="form-group" style="margin-bottom: 0.75rem;">
+              <label class="form-label" for="cf-input-cashier">Nama Kasir / Petugas</label>
+              <select id="cf-input-cashier" class="form-control" required>
+                <option value="">Memuat kasir...</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom: 0.75rem;">
+              <label class="form-label" for="cf-input-type">Jenis Arus Kas</label>
+              <select id="cf-input-type" class="form-control" required>
+                <option value="modal_awal">Modal Awal Kembalian (Buka Kasir Pagi)</option>
+                <option value="kas_masuk">Kas Masuk (Tambah Modal / Setoran)</option>
+                <option value="kas_keluar">Kas Keluar (Biaya Toko: Galon, Kantong Plastik, Sampah)</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom: 0.75rem;">
+              <label class="form-label" for="cf-input-amount">Nominal Uang (Rp)</label>
+              <input type="number" id="cf-input-amount" class="form-control mono" placeholder="Contoh: 100000" min="1" required>
+            </div>
+            <div class="form-group" style="margin-bottom: 0.75rem;">
+              <label class="form-label" for="cf-input-notes">Keterangan / Keperluan</label>
+              <input type="text" id="cf-input-notes" class="form-control" placeholder="Contoh: Beli air mineral galon & kantong plastik" required>
+            </div>
+            <button type="submit" class="btn btn-primary" id="btn-save-cash-flow" style="width: 100%;">
+              Simpan Catatan Kas
+            </button>
+          </form>
+        </div>
+
+        <!-- Riwayat Arus Kas Hari Ini -->
+        <div>
+          <h3 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem;">Riwayat Arus Kas Hari Ini</h3>
+          <div style="max-height: 180px; overflow-y: auto; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 8px; background: var(--color-surface);">
+            <table class="data-table" style="font-size: 0.8125rem;">
+              <thead>
+                <tr>
+                  <th>Waktu</th>
+                  <th>Jenis</th>
+                  <th>Keterangan</th>
+                  <th style="text-align: right;">Nominal</th>
+                </tr>
+              </thead>
+              <tbody id="flow-history-table-body">
+                <tr>
+                  <td colspan="4" style="text-align: center; color: var(--color-text-muted); padding: 1rem;">Memuat data...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeCashFlowModal()">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: CETAK STRUK THERMAL -->
+  <div class="modal-overlay" id="modal-receipt" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 class="modal-title">Struk Transaksi</h2>
+        <button onclick="closeReceiptModal()" style="font-size: 1.5rem; color: var(--color-text-muted);">&times;</button>
+      </div>
+      <div class="modal-body" style="background-color: #F1F5F9; display: flex; justify-content: center; padding: 1.5rem;">
+        <div class="receipt-paper" id="receipt-printable-area">
+          <div class="receipt-text-center">
+            <h3 style="font-size: 1.05rem; font-weight: 700; margin: 0;" id="rcpt-store-name">Toko Kelontong Berkah</h3>
+            <p id="rcpt-store-address" style="font-size: 0.8125rem; color: #475569;">Jl. Pasar Baru No. 12, Bandung</p>
+            <p id="rcpt-store-phone" style="font-size: 0.8125rem; color: #475569;">Telp: 0812-3456-7890</p>
+          </div>
+
+          <div class="receipt-divider"></div>
+
+          <div class="receipt-row" style="font-size: 0.8125rem;">
+            <span id="rcpt-invoice-no">TRX-20261030-001</span>
+            <span id="rcpt-date">30 Okt 2026 10:15</span>
+          </div>
+          <div class="receipt-row" style="font-size: 0.8125rem;">
+            <span id="rcpt-cashier">Kasir: Kasir</span>
+            <span id="rcpt-customer">Konsumen: Umum</span>
+          </div>
+          <div class="receipt-row" style="font-size: 0.8125rem;">
+            <span id="rcpt-pay-method">Pembayaran: Tunai</span>
+          </div>
+
+          <div class="receipt-divider"></div>
+
+          <!-- Daftar Barang -->
+          <div id="rcpt-items-container">
+            <!-- Items populated by JS -->
+          </div>
+
+          <div class="receipt-divider"></div>
+
+          <div class="receipt-row" style="font-weight: 700; font-size: 0.95rem;">
+            <span>TOTAL:</span>
+            <span id="rcpt-total">Rp 0</span>
+          </div>
+          <div class="receipt-row">
+            <span id="rcpt-pay-label">Tunai:</span>
+            <span id="rcpt-cash">Rp 0</span>
+          </div>
+          <div class="receipt-row">
+            <span>Kembalian:</span>
+            <span id="rcpt-change">Rp 0</span>
+          </div>
+
+          <div class="receipt-divider"></div>
+
+          <div class="receipt-text-center" style="font-size: 0.8125rem; margin-top: 6px;">
+            <p id="rcpt-footer-note">Terima kasih atas kunjungan Anda!</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeReceiptModal()">Tutup</button>
+        <button class="btn btn-primary" onclick="printReceipt()" style="display: inline-flex; align-items: center; gap: 6px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Cetak Struk</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: KAMERA BARCODE SCANNER (MINIMALIST & FAST) -->
+  <div class="modal-overlay" id="modal-camera-scan" style="display: none;">
+    <div class="modal-card scanner-minimal-card">
+      <!-- Header Minimalis & Bersih -->
+      <div class="scanner-card-header">
+        <div class="scanner-header-text">
+          <h2 class="scanner-modal-title">Pindai Barcode</h2>
+          <p class="scanner-modal-sub">Arahkan kamera ke barcode produk</p>
+        </div>
+        
+        <!-- Toolbar Kontrol: Icon-Only Minimalis -->
+        <div class="scanner-toolbar-actions">
+          <button type="button" class="btn-icon-scanner" id="btn-toggle-sound" onclick="toggleScannerSound()" title="Suara Beep" aria-label="Suara Beep">
+            <span id="scanner-sound-icon" style="display: inline-flex; align-items: center;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            </span>
+          </button>
+          <button type="button" class="btn-icon-scanner" id="btn-toggle-torch" onclick="toggleScannerTorch()" title="Senter Flash" aria-label="Senter Flash">
+            <span id="scanner-torch-icon" style="display: inline-flex; align-items: center;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </span>
+          </button>
+          <button type="button" class="btn-icon-scanner" id="btn-switch-cam" onclick="switchScannerCamera()" title="Ganti Kamera" aria-label="Ganti Kamera">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          </button>
+          <button type="button" class="btn-icon-scanner btn-scanner-close" onclick="closeCameraScannerModal()" title="Tutup Scanner" aria-label="Tutup Scanner">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Kamera Viewfinder Screen -->
+      <div class="scanner-viewport-container">
+        <div class="camera-viewport-wrap" id="scanner-viewport-wrap">
+          <video id="camera-preview-video" class="camera-preview-stream" playsinline muted autoplay></video>
+          <div id="camera-reader-box" style="display: none; width: 100%; height: 100%;"></div>
+
+          <!-- Minimalist Focus Reticle -->
+          <div class="scan-laser-reticle" id="scan-laser-reticle">
+            <div class="reticle-corner reticle-corner-tl"></div>
+            <div class="reticle-corner reticle-corner-tr"></div>
+            <div class="reticle-corner reticle-corner-bl"></div>
+            <div class="reticle-corner reticle-corner-br"></div>
+            <div class="scan-laser-line"></div>
+          </div>
+
+          <!-- Flash Screen Hit Animation -->
+          <div class="scanner-hit-flash" id="scanner-hit-flash"></div>
+        </div>
+
+        <!-- Scanner Status Feedback -->
+        <div class="scanner-status-strip" id="camera-scan-status">
+          <span id="scanner-status-text">Posisikan barcode produk di dalam area bidik</span>
+        </div>
+      </div>
+
+      <!-- Live Scan Feed Tray -->
+      <div class="scanner-feed-tray">
+        <!-- Notifikasi Produk Terakhir Dipindai -->
+        <div class="scanner-last-scanned" id="scanner-last-scanned" style="display: none;">
+          <div class="scanned-item-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="scanned-item-details">
+            <div class="scanned-item-name" id="scanned-prod-name">-</div>
+            <div class="scanned-item-meta">
+              <span class="mono" id="scanned-prod-price">Rp 0</span>
+              <span class="scanned-qty-badge" id="scanned-prod-qty">+1</span>
+              <span class="mono scanned-subtotal-val" id="scanned-prod-subtotal">Subtotal: Rp 0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ringkasan Keranjang Belanja -->
+        <div class="scanner-cart-live-summary">
+          <div class="scanner-live-count">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span>Keranjang:</span>
+            <strong id="scanner-live-items-count">0 Barang</strong>
+          </div>
+          <div class="scanner-live-amount">
+            <span class="mono" id="scanner-live-total-amount">Rp 0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Action -->
+      <div class="scanner-modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeCameraScannerModal()">
+          Tutup
+        </button>
+        <button type="button" class="btn btn-primary btn-scanner-finish" onclick="closeCameraScannerModal()">
+          <span>Selesai & Ke Kasir</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js?v=2.4"></script>
+  <script src="/js/html5-qrcode.min.js?v=2.4"></script>
+  <script src="/js/barcode.js?v=2.4"></script>
+  <script src="/js/kasir.js?v=2.4"></script>
+</body>
+</html>

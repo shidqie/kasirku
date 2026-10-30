@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Persediaan & Stok - KasirKu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <div class="app-wrapper">
+    <!-- Desktop Sidebar -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-badge-icon">K</div>
+        <div>
+          <div class="brand-text-name">KasirKu</div>
+          <div class="brand-text-sub">Toko Kelontong Berkah</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="/" class="nav-link-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg><span>Dashboard</span></a>
+        <a href="/kasir" class="nav-link-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span>Kasir (Transaksi)</span></a>
+        <a href="/produk" class="nav-link-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg><span>Data Produk</span></a>
+        <a href="/stok" class="nav-link-item active"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg><span>Persediaan & Stok</span></a>
+        <a href="/laporan" class="nav-link-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg><span>Laporan Penjualan</span></a>
+        <a href="/pengaturan" class="nav-link-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg><span>Pengaturan Toko</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <span class="user-name">Kasir</span>
+          <span class="user-role">Petugas Toko</span>
+        </div>
+        <button class="btn-logout" onclick="handleLogout()" title="Keluar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg></button>
+      </div>
+    </aside>
+
+    <main class="app-content">
+      <div class="top-mobile-bar">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div class="brand-badge-icon" style="width: 32px; height: 32px; font-size: 0.9rem;">K</div>
+          <span class="mobile-brand-title">Persediaan Stok</span>
+        </div>
+        <button class="btn btn-primary" onclick="openStockEntryModal()" style="padding: 4px 10px; font-size: 0.8125rem;">+ Stok Masuk</button>
+      </div>
+
+      <div class="page-container">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Manajemen Stok & Persediaan</h1>
+            <p class="page-subtitle">Pantau stok barang, catat pasokan masuk dari supplier, dan riwayat mutasi.</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn btn-secondary" onclick="openStockAdjustModal()">Penyesuaian (Opname)</button>
+            <button class="btn btn-primary" onclick="openStockEntryModal()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              Stok Masuk
+            </button>
+          </div>
+        </div>
+
+        <!-- Tab Navigasi -->
+        <div style="display: flex; gap: 0.5rem; border-bottom: 1px solid var(--color-border); margin-bottom: 1.25rem;">
+          <button class="nav-link-item active" id="tab-btn-stock" onclick="switchStockTab('stock')" style="border-radius: var(--radius-md) var(--radius-md) 0 0; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            <span>Stok Barang Saat Ini</span>
+          </button>
+          <button class="nav-link-item" id="tab-btn-movements" onclick="switchStockTab('movements')" style="border-radius: var(--radius-md) var(--radius-md) 0 0; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <span>Riwayat Mutasi Stok</span>
+          </button>
+        </div>
+
+        <!-- TAB 1: STOK SAAT INI -->
+        <div id="tab-pane-stock">
+          <div class="card table-card">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Kode</th>
+                    <th>Nama Produk</th>
+                    <th>Kategori</th>
+                    <th>Stok Saat Ini</th>
+                    <th>Batas Minimum</th>
+                    <th>Status Stok</th>
+                    <th style="text-align: right;">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="stock-table-body">
+                  <tr><td colspan="7" style="text-align: center; padding: 2rem; color: var(--color-text-muted);">Memuat data persediaan...</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Pagination Controls Stok -->
+            <div id="stock-pagination-container" style="display: none; justify-content: space-between; align-items: center; padding: 12px 16px; border-top: 1px solid var(--color-border); background: var(--color-surface); flex-wrap: wrap; gap: 8px;">
+              <div style="font-size: 0.8125rem; color: var(--color-text-muted);">
+                Menampilkan <span id="pag-stock-start" style="font-weight: 600; color: var(--color-text);">1</span> - <span id="pag-stock-end" style="font-weight: 600; color: var(--color-text);">10</span> dari <span id="pag-stock-total" style="font-weight: 600; color: var(--color-text);">0</span> barang
+              </div>
+              <div id="stock-pagination-buttons" style="display: flex; gap: 4px; align-items: center;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: RIWAYAT MUTASI -->
+        <div id="tab-pane-movements" style="display: none;">
+          <div class="card table-card">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Waktu</th>
+                    <th>Produk</th>
+                    <th>Tipe Mutasi</th>
+                    <th>Perubahan</th>
+                    <th>Stok Akhir</th>
+                    <th>Keterangan</th>
+                  </tr>
+                </thead>
+                <tbody id="movements-table-body">
+                  <tr><td colspan="6" style="text-align: center; padding: 2rem; color: var(--color-text-muted);">Memuat riwayat mutasi...</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Pagination Controls Mutasi -->
+            <div id="movements-pagination-container" style="display: none; justify-content: space-between; align-items: center; padding: 12px 16px; border-top: 1px solid var(--color-border); background: var(--color-surface); flex-wrap: wrap; gap: 8px;">
+              <div style="font-size: 0.8125rem; color: var(--color-text-muted);">
+                Menampilkan <span id="pag-mov-start" style="font-weight: 600; color: var(--color-text);">1</span> - <span id="pag-mov-end" style="font-weight: 600; color: var(--color-text);">10</span> dari <span id="pag-mov-total" style="font-weight: 600; color: var(--color-text);">0</span> mutasi
+              </div>
+              <div id="movements-pagination-buttons" style="display: flex; gap: 4px; align-items: center;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Bottom Nav -->
+      <nav class="mobile-bottom-nav">
+        <a href="/" class="mobile-tab"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg><span>Dashboard</span></a>
+        <a href="/kasir" class="mobile-tab"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span>Kasir</span></a>
+        <a href="/produk" class="mobile-tab"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path></svg><span>Produk</span></a>
+        <a href="/stok" class="mobile-tab active"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg><span>Stok</span></a>
+        <a href="/laporan" class="mobile-tab"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg><span>Laporan</span></a>
+      </nav>
+    </main>
+  </div>
+
+  <!-- MODAL: STOK MASUK (SUPPLIER) -->
+  <div class="modal-overlay" id="modal-stock-entry" style="display: none;">
+    <div class="modal-card modal-card-lg">
+      <div class="modal-header">
+        <h2 class="modal-title">Pencatatan Stok Masuk (Supplier)</h2>
+        <button onclick="closeStockEntryModal()" style="font-size: 1.5rem; color: var(--color-text-muted);">&times;</button>
+      </div>
+      <form id="form-stock-entry" onsubmit="submitStockEntry(event)">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label" for="entry-supplier">Nama Pemasok / Supplier *</label>
+            <input type="text" id="entry-supplier" class="form-control" placeholder="Contoh: Agen Sembako Makmur" required>
+          </div>
+
+          <div style="margin-top: 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <label class="form-label">Daftar Barang Masuk</label>
+              <button type="button" class="btn btn-secondary" onclick="addEntryItemRow()" style="padding: 2px 8px; font-size: 0.75rem; min-height: 28px;">+ Tambah Baris</button>
+            </div>
+            <div id="entry-items-rows" style="display: flex; flex-direction: column; gap: 0.5rem;"></div>
+          </div>
+
+          <div class="form-group" style="margin-top: 1rem;">
+            <label class="form-label" for="entry-notes">Catatan Tambahan (Opsional)</label>
+            <input type="text" id="entry-notes" class="form-control" placeholder="No. faktur / surat jalan supplier...">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeStockEntryModal()">Batal</button>
+          <button type="submit" class="btn btn-primary" id="btn-submit-entry">Simpan Stok Masuk</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: PENYESUAIAN STOK (STOCK OPNAME) -->
+  <div class="modal-overlay" id="modal-stock-adjust" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 class="modal-title">Penyesuaian Stok (Stock Opname)</h2>
+        <button onclick="closeStockAdjustModal()" style="font-size: 1.5rem; color: var(--color-text-muted);">&times;</button>
+      </div>
+      <form id="form-stock-adjust" onsubmit="submitStockAdjust(event)">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label" for="adjust-product">Pilih Produk *</label>
+            <select id="adjust-product" class="form-control" required onchange="onAdjustProductSelected()"></select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Stok Sistem Saat Ini</label>
+            <div id="adjust-current-stock" style="font-weight: 700; font-size: 1.1rem; color: var(--color-primary);">-</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="adjust-actual-stock">Jumlah Stok Fisik Aktual *</label>
+            <input type="number" step="0.01" min="0" id="adjust-actual-stock" class="form-control mono" placeholder="0" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="adjust-notes">Alasan Penyesuaian *</label>
+            <input type="text" id="adjust-notes" class="form-control" placeholder="Contoh: Barang rusak, selisih hitung fisik, dll." required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeStockAdjustModal()">Batal</button>
+          <button type="submit" class="btn btn-primary">Simpan Penyesuaian</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+  <script>
+    let productsList = [];
+    let stockCurrentPage = 1;
+    const stockPageSize = 10;
+
+    let movementsList = [];
+    let movementsCurrentPage = 1;
+    const movementsPageSize = 10;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadStockData();
+      loadMovements();
+    });
+
+    function switchStockTab(tab) {
+      const btnStock = document.getElementById('tab-btn-stock');
+      const btnMove = document.getElementById('tab-btn-movements');
+      const paneStock = document.getElementById('tab-pane-stock');
+      const paneMove = document.getElementById('tab-pane-movements');
+
+      if (tab === 'stock') {
+        btnStock.classList.add('active');
+        btnMove.classList.remove('active');
+        paneStock.style.display = 'block';
+        paneMove.style.display = 'none';
+      } else {
+        btnMove.classList.add('active');
+        btnStock.classList.remove('active');
+        paneMove.style.display = 'block';
+        paneStock.style.display = 'none';
+      }
+    }
+
+    async function loadStockData() {
+      try {
+        const res = await fetch('/api/products?status=active');
+        const data = await res.json();
+        if (data.success) {
+          productsList = data.data || [];
+          stockCurrentPage = 1;
+          renderStockTable();
+          populateProductSelects(productsList);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    function renderStockTable() {
+      const tbody = document.getElementById('stock-table-body');
+      const pagContainer = document.getElementById('stock-pagination-container');
+      const pagBtns = document.getElementById('stock-pagination-buttons');
+
+      const total = productsList.length;
+
+      if (total === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 2rem;">Belum ada data barang.</td></tr>';
+        if (pagContainer) pagContainer.style.display = 'none';
+        return;
+      }
+
+      const totalPages = Math.ceil(total / stockPageSize);
+      if (stockCurrentPage > totalPages) stockCurrentPage = totalPages;
+      if (stockCurrentPage < 1) stockCurrentPage = 1;
+
+      const startIndex = (stockCurrentPage - 1) * stockPageSize;
+      const endIndex = Math.min(startIndex + stockPageSize, total);
+      const currentItems = productsList.slice(startIndex, endIndex);
+
+      tbody.innerHTML = currentItems.map(p => {
+        const isLow = p.stock <= p.min_stock;
+        const isOut = p.stock <= 0;
+        let badge = `<span class="badge badge-success">Aman</span>`;
+        if (isOut) {
+          badge = `<span class="badge badge-danger">Habis</span>`;
+        } else if (isLow) {
+          badge = `<span class="badge badge-warning">Menipis</span>`;
+        }
+
+        return `
+          <tr>
+            <td class="mono" style="font-weight: 600;">${p.code}</td>
+            <td style="font-weight: 600;">${p.name}</td>
+            <td style="color: var(--color-text-muted);">${p.category_name || '-'}</td>
+            <td style="font-weight: 700; color: ${isLow ? 'var(--color-danger)' : 'var(--color-text)'};">
+              ${formatDecimal(p.stock)} ${p.base_unit}
+            </td>
+            <td style="color: var(--color-text-muted);">${formatDecimal(p.min_stock)} ${p.base_unit}</td>
+            <td>${badge}</td>
+            <td style="text-align: right;">
+              <button class="btn btn-secondary btn-sm" onclick="openAdjustForProduct(${p.id})">Koreksi</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      // Kontrol pagination stok jika data > 10
+      if (total > stockPageSize) {
+        if (pagContainer) pagContainer.style.display = 'flex';
+        document.getElementById('pag-stock-start').textContent = startIndex + 1;
+        document.getElementById('pag-stock-end').textContent = endIndex;
+        document.getElementById('pag-stock-total').textContent = total;
+
+        let btnsHtml = `
+          <button type="button" class="btn btn-secondary btn-sm" style="padding: 4px 10px; font-size: 0.75rem;" onclick="goToStockPage(${stockCurrentPage - 1})" ${stockCurrentPage === 1 ? 'disabled' : ''}>
+            Sebelumnya
+          </button>
+        `;
+
+        for (let i = 1; i <= totalPages; i++) {
+          btnsHtml += `
+            <button type="button" class="btn ${i === stockCurrentPage ? 'btn-primary' : 'btn-secondary'} btn-sm" style="padding: 4px 10px; min-width: 32px; font-size: 0.75rem;" onclick="goToStockPage(${i})">
+              ${i}
+            </button>
+          `;
+        }
+
+        btnsHtml += `
+          <button type="button" class="btn btn-secondary btn-sm" style="padding: 4px 10px; font-size: 0.75rem;" onclick="goToStockPage(${stockCurrentPage + 1})" ${stockCurrentPage === totalPages ? 'disabled' : ''}>
+            Selanjutnya
+          </button>
+        `;
+
+        if (pagBtns) pagBtns.innerHTML = btnsHtml;
+      } else {
+        if (pagContainer) pagContainer.style.display = 'none';
+      }
+    }
+
+    function goToStockPage(page) {
+      stockCurrentPage = page;
+      renderStockTable();
+    }
+
+    async function loadMovements() {
+      try {
+        const res = await fetch('/api/stocks/movements');
+        const data = await res.json();
+        if (data.success) {
+          movementsList = data.data || [];
+          movementsCurrentPage = 1;
+          renderPaginatedMovements();
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    function renderPaginatedMovements() {
+      const tbody = document.getElementById('movements-table-body');
+      const pagContainer = document.getElementById('movements-pagination-container');
+      const pagBtns = document.getElementById('movements-pagination-buttons');
+
+      const total = movementsList.length;
+
+      if (total === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 2rem;">Belum ada riwayat mutasi stok.</td></tr>';
+        if (pagContainer) pagContainer.style.display = 'none';
+        return;
+      }
+
+      const totalPages = Math.ceil(total / movementsPageSize);
+      if (movementsCurrentPage > totalPages) movementsCurrentPage = totalPages;
+      if (movementsCurrentPage < 1) movementsCurrentPage = 1;
+
+      const startIndex = (movementsCurrentPage - 1) * movementsPageSize;
+      const endIndex = Math.min(startIndex + movementsPageSize, total);
+      const currentItems = movementsList.slice(startIndex, endIndex);
+
+      tbody.innerHTML = currentItems.map(m => {
+        const isNegative = m.quantity < 0;
+        return `
+          <tr style="border-bottom: 1px solid var(--color-border);">
+            <td style="padding: 12px 16px; font-size: 0.8125rem;">${formatDateIndo(m.movement_date)}</td>
+            <td style="padding: 12px 16px; font-weight: 600;">${m.product_name} (${m.product_code})</td>
+            <td style="padding: 12px 16px;"><span style="text-transform: capitalize; font-weight: 500;">${m.type.replace('_', ' ')}</span></td>
+            <td style="padding: 12px 16px; font-weight: 700; color: ${isNegative ? 'var(--color-danger)' : 'var(--color-success)'};">
+              ${isNegative ? '' : '+'}${formatDecimal(m.quantity)} ${m.base_unit}
+            </td>
+            <td style="padding: 12px 16px; font-weight: 600;">${formatDecimal(m.balance_after)} ${m.base_unit}</td>
+            <td style="padding: 12px 16px; color: var(--color-text-muted); font-size: 0.8125rem;">${m.notes || '-'}</td>
+          </tr>
+        `;
+      }).join('');
+
+      // Kontrol pagination mutasi jika data > 10
+      if (total > movementsPageSize) {
+        if (pagContainer) pagContainer.style.display = 'flex';
+        document.getElementById('pag-mov-start').textContent = startIndex + 1;
+        document.getElementById('pag-mov-end').textContent = endIndex;
+        document.getElementById('pag-mov-total').textContent = total;
+
+        let btnsHtml = `
+          <button type="button" class="btn btn-secondary btn-sm" style="padding: 4px 10px; font-size: 0.75rem;" onclick="goToMovementsPage(${movementsCurrentPage - 1})" ${movementsCurrentPage === 1 ? 'disabled' : ''}>
+            Sebelumnya
+          </button>
+        `;
+
+        for (let i = 1; i <= totalPages; i++) {
+          btnsHtml += `
+            <button type="button" class="btn ${i === movementsCurrentPage ? 'btn-primary' : 'btn-secondary'} btn-sm" style="padding: 4px 10px; min-width: 32px; font-size: 0.75rem;" onclick="goToMovementsPage(${i})">
+              ${i}
+            </button>
+          `;
+        }
+
+        btnsHtml += `
+          <button type="button" class="btn btn-secondary btn-sm" style="padding: 4px 10px; font-size: 0.75rem;" onclick="goToMovementsPage(${movementsCurrentPage + 1})" ${movementsCurrentPage === totalPages ? 'disabled' : ''}>
+            Selanjutnya
+          </button>
+        `;
+
+        if (pagBtns) pagBtns.innerHTML = btnsHtml;
+      } else {
+        if (pagContainer) pagContainer.style.display = 'none';
+      }
+    }
+
+    function goToMovementsPage(page) {
+      movementsCurrentPage = page;
+      renderPaginatedMovements();
+    }
+
+    function populateProductSelects(products) {
+      const selectAdjust = document.getElementById('adjust-product');
+      if (selectAdjust) {
+        selectAdjust.innerHTML = '<option value="">-- Pilih Produk --</option>' +
+          products.map(p => `<option value="${p.id}">${p.name} (Stok: ${p.stock} ${p.base_unit})</option>`).join('');
+      }
+    }
+
+    // Modal Stok Masuk
+    function openStockEntryModal() {
+      document.getElementById('form-stock-entry').reset();
+      const rows = document.getElementById('entry-items-rows');
+      rows.innerHTML = '';
+      addEntryItemRow();
+      document.getElementById('modal-stock-entry').style.display = 'flex';
+    }
+    function closeStockEntryModal() {
+      document.getElementById('modal-stock-entry').style.display = 'none';
+    }
+
+    function addEntryItemRow() {
+      const container = document.getElementById('entry-items-rows');
+      const row = document.createElement('div');
+      row.className = 'entry-item-row';
+      row.style.display = 'grid';
+      row.style.gridTemplateColumns = '2fr 1fr 1fr 32px';
+      row.style.gap = '8px';
+      row.style.alignItems = 'center';
+
+      row.innerHTML = `
+        <select class="form-control select-entry-prod" required>
+          <option value="">-- Pilih Produk --</option>
+          ${productsList.map(p => `<option value="${p.id}">${p.name} (${p.base_unit})</option>`).join('')}
+        </select>
+        <input type="number" step="0.01" min="0.01" class="form-control input-entry-qty mono" placeholder="Qty" required>
+        <input type="number" class="form-control input-entry-cost mono" placeholder="Harga Beli">
+        <button type="button" onclick="this.parentElement.remove()" style="color: var(--color-danger); font-size: 1.25rem;">&times;</button>
+      `;
+      container.appendChild(row);
+    }
+
+    async function submitStockEntry(e) {
+      e.preventDefault();
+      const supplier_name = document.getElementById('entry-supplier').value.trim();
+      const notes = document.getElementById('entry-notes').value.trim();
+
+      const itemRows = document.querySelectorAll('.entry-item-row');
+      const items = [];
+      itemRows.forEach(row => {
+        const prodId = row.querySelector('.select-entry-prod').value;
+        const qty = row.querySelector('.input-entry-qty').value;
+        const cost = row.querySelector('.input-entry-cost').value || 0;
+        if (prodId && qty) {
+          items.push({
+            product_id: parseInt(prodId),
+            quantity: parseFloat(qty),
+            unit_cost: parseFloat(cost)
+          });
+        }
+      });
+
+      if (items.length === 0) {
+        showToast('Minimal masukkan 1 produk.', 'warning');
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/stocks/entries', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ supplier_name, items, notes })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast('Stok masuk berhasil dicatat!', 'success');
+          closeStockEntryModal();
+          loadStockData();
+          loadMovements();
+        } else {
+          showToast(data.message, 'error');
+        }
+      } catch (err) {
+        showToast('Gagal memproses stok masuk.', 'error');
+      }
+    }
+
+    // Modal Stock Adjust
+    function openStockAdjustModal() {
+      document.getElementById('form-stock-adjust').reset();
+      document.getElementById('adjust-current-stock').textContent = '-';
+      document.getElementById('modal-stock-adjust').style.display = 'flex';
+    }
+    function openAdjustForProduct(prodId) {
+      openStockAdjustModal();
+      const sel = document.getElementById('adjust-product');
+      sel.value = prodId;
+      onAdjustProductSelected();
+    }
+    function closeStockAdjustModal() {
+      document.getElementById('modal-stock-adjust').style.display = 'none';
+    }
+
+    function onAdjustProductSelected() {
+      const prodId = document.getElementById('adjust-product').value;
+      const prod = productsList.find(p => String(p.id) === String(prodId));
+      const display = document.getElementById('adjust-current-stock');
+      if (prod) {
+        display.textContent = `${formatDecimal(prod.stock)} ${prod.base_unit}`;
+      } else {
+        display.textContent = '-';
+      }
+    }
+
+    async function submitStockAdjust(e) {
+      e.preventDefault();
+      const product_id = document.getElementById('adjust-product').value;
+      const actual_stock = document.getElementById('adjust-actual-stock').value;
+      const notes = document.getElementById('adjust-notes').value.trim();
+
+      try {
+        const res = await fetch('/api/stocks/adjust', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ product_id, actual_stock, notes })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast(data.message, 'success');
+          closeStockAdjustModal();
+          loadStockData();
+          loadMovements();
+        } else {
+          showToast(data.message, 'error');
+        }
+      } catch (err) {
+        showToast('Gagal menyesuaikan stok.', 'error');
+      }
+    }
+  </script>
+</body>
+</html>

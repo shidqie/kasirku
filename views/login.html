@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - KasirKu Toko Kelontong</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="manifest" href="/manifest.json">
+  <style>
+    .login-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-bg);
+      padding: 1rem;
+    }
+    .login-card {
+      width: 100%;
+      max-width: 400px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      box-shadow: var(--shadow-md);
+    }
+    .login-brand {
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+    .login-brand-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: var(--radius-md);
+      background-color: var(--color-primary);
+      color: #FFFFFF;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .login-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .login-subtitle {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      margin-top: 0.25rem;
+    }
+    .btn-login {
+      width: 100%;
+      height: 44px;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+    .default-credential-box {
+      margin-top: 1.25rem;
+      padding: 0.75rem;
+      background-color: var(--color-primary-subtle);
+      border: 1px solid #BFDBFE;
+      border-radius: var(--radius-md);
+      font-size: 0.75rem;
+      color: #1E40AF;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-page">
+    <div class="login-card">
+      <div class="login-brand">
+        <div class="login-brand-icon">K</div>
+        <h1 class="login-title">KasirKu</h1>
+        <p class="login-subtitle">Sistem Kasir & Manajemen Stok Toko Kelontong</p>
+      </div>
+
+      <form id="form-login">
+        <div class="form-group">
+          <label class="form-label" for="username">Username</label>
+          <input type="text" id="username" class="form-control" placeholder="Masukkan username" value="kasir" required autocomplete="username">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <div style="position: relative;">
+            <input type="password" id="password" class="form-control" placeholder="Masukkan password" value="kasir123" required autocomplete="current-password" style="padding-right: 40px;">
+            <button type="button" id="btn-toggle-pwd" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); display: flex; align-items: center; justify-content: center; background: none; border: none; padding: 4px; cursor: pointer;" title="Lihat password" aria-label="Lihat password">
+              <svg id="eye-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="7" r="3"/></svg>
+              <svg id="eye-off-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-login" id="btn-submit-login">
+          Masuk ke KasirKu
+        </button>
+      </form>
+
+      <div style="margin-top: 1.5rem; border-top: 1px dashed var(--color-border); padding-top: 1rem;">
+        <div style="font-size: 0.75rem; font-weight: 600; color: var(--color-text-muted); margin-bottom: 0.5rem; text-align: center;">
+          PILIH AKUN LOGIN:
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <button type="button" class="btn btn-secondary" onclick="quickFill('pemilik', 'pemilik123')" style="font-size: 0.75rem; padding: 6px 8px; flex-direction: column; align-items: center; min-height: 48px; border-color: #CBD5E1;">
+            <span style="display: inline-flex; align-items: center; gap: 4px; font-weight: 700; color: var(--color-primary);">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Pemilik
+            </span>
+            <span style="font-size: 0.7rem; color: var(--color-text-muted);">pemilik / pemilik123</span>
+          </button>
+          <button type="button" class="btn btn-secondary" onclick="quickFill('kasir', 'kasir123')" style="font-size: 0.75rem; padding: 6px 8px; flex-direction: column; align-items: center; min-height: 48px; border-color: #CBD5E1;">
+            <span style="display: inline-flex; align-items: center; gap: 4px; font-weight: 700; color: var(--color-success);">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Kasir
+            </span>
+            <span style="font-size: 0.7rem; color: var(--color-text-muted);">kasir / kasir123</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+  <script>
+    function quickFill(u, p) {
+      document.getElementById('username').value = u;
+      document.getElementById('password').value = p;
+    }
+
+    // Toggle Password Visibility
+    const pwdInput = document.getElementById('password');
+    const btnToggle = document.getElementById('btn-toggle-pwd');
+    btnToggle.addEventListener('click', () => {
+      const eyeIcon = document.getElementById('eye-icon');
+      const eyeOffIcon = document.getElementById('eye-off-icon');
+      if (pwdInput.type === 'password') {
+        pwdInput.type = 'text';
+        if (eyeIcon) eyeIcon.style.display = 'none';
+        if (eyeOffIcon) eyeOffIcon.style.display = 'block';
+      } else {
+        pwdInput.type = 'password';
+        if (eyeIcon) eyeIcon.style.display = 'block';
+        if (eyeOffIcon) eyeOffIcon.style.display = 'none';
+      }
+    });
+
+    // Submit Login
+    const formLogin = document.getElementById('form-login');
+    formLogin.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      const btn = document.getElementById('btn-submit-login');
+
+      btn.disabled = true;
+      btn.textContent = 'Memeriksa...';
+
+      try {
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          showToast('Login berhasil sebagai ' + (data.user?.name || username), 'success');
+          setTimeout(() => {
+            window.location.href = data.redirectTo || '/';
+          }, 400);
+        } else {
+          showToast(data.message || 'Login gagal.', 'error');
+          btn.disabled = false;
+          btn.textContent = 'Masuk ke KasirKu';
+        }
+      } catch (err) {
+        showToast('Terjadi kesalahan koneksi server.', 'error');
+        btn.disabled = false;
+        btn.textContent = 'Masuk ke KasirKu';
+      }
+    });
+  </script>
+</body>
+</html>

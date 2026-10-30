@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengaturan Toko - KasirKu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <div class="app-wrapper">
+    <!-- Desktop Sidebar -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-badge-icon">K</div>
+        <div>
+          <div class="brand-text-name">KasirKu</div>
+          <div class="brand-text-sub">Toko Kelontong Berkah</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="/" class="nav-link-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="/kasir" class="nav-link-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span>Kasir (Transaksi)</span>
+        </a>
+        <a href="/produk" class="nav-link-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          <span>Data Produk</span>
+        </a>
+        <a href="/stok" class="nav-link-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          <span>Persediaan & Stok</span>
+        </a>
+        <a href="/laporan" class="nav-link-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <span>Laporan Penjualan</span>
+        </a>
+        <a href="/pengaturan" class="nav-link-item active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <span>Pengaturan Toko</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <span class="user-name" id="sidebar-user-name">Kasir</span>
+          <span class="user-role" id="sidebar-user-role">Petugas Toko</span>
+        </div>
+        <button class="btn-logout" onclick="handleLogout()" title="Keluar / Logout">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        </button>
+      </div>
+    </aside>
+
+    <main class="app-content">
+      <!-- Top Mobile Bar -->
+      <div class="top-mobile-bar">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div class="brand-badge-icon" style="width: 32px; height: 32px; font-size: 0.9rem;">K</div>
+          <span class="mobile-brand-title">Pengaturan</span>
+        </div>
+      </div>
+
+      <div class="page-container" style="max-width: 780px;">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Pengaturan Sistem</h1>
+            <p class="page-subtitle">Sesuaikan data identitas toko, informasi struk, dan manajemen akun pengguna.</p>
+          </div>
+        </div>
+
+        <!-- Profil Toko -->
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h2 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">
+            Profil Toko & Informasi Struk
+          </h2>
+          <form id="form-store" onsubmit="saveStoreSettings(event)">
+            <div class="form-group">
+              <label class="form-label" for="store-name">Nama Toko Kelontong *</label>
+              <input type="text" id="store-name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="store-address">Alamat Toko</label>
+              <textarea id="store-address" class="form-control" style="height: 70px; padding: 8px;"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="store-phone">Nomor Telepon / WhatsApp</label>
+              <input type="text" id="store-phone" class="form-control">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="receipt-footer">Catatan Kaki Struk (Footer)</label>
+              <input type="text" id="receipt-footer" class="form-control" placeholder="Contoh: Barang yang sudah dibeli tidak dapat ditukar">
+            </div>
+            <button type="submit" class="btn btn-primary" id="btn-save-store">Simpan Informasi Toko</button>
+            <div id="store-edit-notice" style="display: none; font-size: 0.75rem; color: var(--color-warning); margin-top: 6px; align-items: center; gap: 6px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span>Anda login sebagai Kasir. Informasi toko hanya dapat diubah oleh Pemilik Toko.</span>
+            </div>
+          </form>
+        </div>
+
+        <!-- Ganti Password Akun Sendiri -->
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h2 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">
+            Keamanan Akun (Ganti Password)
+          </h2>
+          <form id="form-password" onsubmit="savePassword(event)">
+            <div class="form-group">
+              <label class="form-label" for="current-password">Password Saat Ini *</label>
+              <input type="password" id="current-password" class="form-control" required autocomplete="current-password">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="new-password">Password Baru (Min. 6 Karakter) *</label>
+              <input type="password" id="new-password" class="form-control" minlength="6" required autocomplete="new-password">
+            </div>
+            <button type="submit" class="btn btn-primary" id="btn-save-pwd">Perbarui Password</button>
+          </form>
+        </div>
+
+        <!-- Manajemen Akun Pengguna (Khusus Pemilik Toko) -->
+        <div class="card table-card owner-only" id="card-user-management" style="margin-bottom: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--color-border); flex-wrap: wrap; gap: 8px;">
+            <div>
+              <h2 style="font-size: 1.1rem; font-weight: 700; margin: 0;">
+                Manajemen Pengguna (Akun Kasir & Pemilik)
+              </h2>
+              <p style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 2px; margin-bottom: 0;">
+                Kelola akun petugas kasir dan hak akses sistem.
+              </p>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm" onclick="openAddUserModal()">
+              + Tambah Pengguna
+            </button>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th style="width: 60px;">ID</th>
+                  <th>Username</th>
+                  <th>Nama Lengkap</th>
+                  <th>Peran (Role)</th>
+                  <th style="text-align: right;">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="users-table-body">
+                <tr><td colspan="5" style="text-align: center; padding: 1.5rem;">Memuat daftar pengguna...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Bottom Nav -->
+      <nav class="mobile-bottom-nav">
+        <a href="/" class="mobile-tab"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg><span>Dashboard</span></a>
+        <a href="/kasir" class="mobile-tab"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span>Kasir</span></a>
+        <a href="/produk" class="mobile-tab"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path></svg><span>Produk</span></a>
+        <a href="/stok" class="mobile-tab"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg><span>Stok</span></a>
+        <a href="/laporan" class="mobile-tab"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg><span>Laporan</span></a>
+      </nav>
+    </main>
+  </div>
+
+  <!-- MODAL: TAMBAH USER (KHUSUS PEMILIK) -->
+  <div class="modal-overlay" id="modal-add-user" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 class="modal-title">Tambah Pengguna Baru</h2>
+        <button type="button" onclick="closeAddUserModal()" style="font-size: 1.5rem; color: var(--color-text-muted);">&times;</button>
+      </div>
+      <form id="form-add-user" onsubmit="submitNewUser(event)">
+        <div class="modal-body" style="padding: 1.25rem;">
+          <div class="form-group">
+            <label class="form-label" for="new-user-username">Username *</label>
+            <input type="text" id="new-user-username" class="form-control" placeholder="Contoh: kasir2" required autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="new-user-password">Password (Min. 6 Karakter) *</label>
+            <input type="password" id="new-user-password" class="form-control" placeholder="Password akun" minlength="6" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="new-user-name">Nama Lengkap *</label>
+            <input type="text" id="new-user-name" class="form-control" placeholder="Contoh: Budi Santoso (Kasir Sore)" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="new-user-role">Peran (Hak Akses) *</label>
+            <select id="new-user-role" class="form-control" required>
+              <option value="kasir">Kasir (Transaksi & Stok)</option>
+              <option value="pemilik">Pemilik (Akses Penuh & Laba)</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeAddUserModal()">Batal</button>
+          <button type="submit" class="btn btn-primary" id="btn-submit-new-user">Simpan Pengguna</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      await loadStoreSettings();
+      checkRoleAccess();
+    });
+
+    async function checkRoleAccess() {
+      try {
+        const res = await fetch('/api/auth/me');
+        const data = await res.json();
+        if (data.success && data.user) {
+          if (data.user.role === 'pemilik') {
+            loadUsersList();
+          } else {
+            // Jika kasir, kunci edit profil toko
+            document.getElementById('store-name').disabled = true;
+            document.getElementById('store-address').disabled = true;
+            document.getElementById('store-phone').disabled = true;
+            document.getElementById('receipt-footer').disabled = true;
+            document.getElementById('btn-save-store').style.display = 'none';
+            document.getElementById('store-edit-notice').style.display = 'block';
+          }
+        }
+      } catch (e) {}
+    }
+
+    async function loadStoreSettings() {
+      try {
+        const res = await fetch('/api/products/settings/store');
+        const data = await res.json();
+        if (data.success && data.data) {
+          const s = data.data;
+          document.getElementById('store-name').value = s.store_name || '';
+          document.getElementById('store-address').value = s.address || '';
+          document.getElementById('store-phone').value = s.phone || '';
+          document.getElementById('receipt-footer').value = s.receipt_footer || '';
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    async function saveStoreSettings(e) {
+      e.preventDefault();
+      const payload = {
+        store_name: document.getElementById('store-name').value.trim(),
+        address: document.getElementById('store-address').value.trim(),
+        phone: document.getElementById('store-phone').value.trim(),
+        receipt_footer: document.getElementById('receipt-footer').value.trim()
+      };
+
+      try {
+        const res = await fetch('/api/products/settings/store', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast('Profil toko berhasil disimpan!', 'success');
+        } else {
+          showToast(data.message, 'error');
+        }
+      } catch (err) {
+        showToast('Gagal menyimpan profil toko.', 'error');
+      }
+    }
+
+    async function savePassword(e) {
+      e.preventDefault();
+      const currentPassword = document.getElementById('current-password').value;
+      const newPassword = document.getElementById('new-password').value;
+
+      try {
+        const res = await fetch('/api/auth/password', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ currentPassword, newPassword })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast('Password berhasil diubah!', 'success');
+          document.getElementById('form-password').reset();
+        } else {
+          showToast(data.message, 'error');
+        }
+      } catch (err) {
+        showToast('Gagal mengubah password.', 'error');
+      }
+    }
+
+    // Manajemen Pengguna (Khusus Pemilik)
+    async function loadUsersList() {
+      try {
+        const res = await fetch('/api/auth/users');
+        const data = await res.json();
+        const tbody = document.getElementById('users-table-body');
+        if (!tbody) return;
+
+        if (data.success && data.data) {
+          tbody.innerHTML = data.data.map(u => {
+            const isPemilik = u.role === 'pemilik';
+            const roleBadge = isPemilik
+              ? '<span class="badge badge-warning" style="display:inline-flex;align-items:center;gap:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Pemilik</span>'
+              : '<span class="badge badge-primary" style="display:inline-flex;align-items:center;gap:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Kasir</span>';
+
+            const canDelete = currentUser && currentUser.id !== u.id;
+            const deleteBtn = canDelete
+              ? `<button type="button" class="btn btn-secondary btn-sm" onclick="deleteUserAccount(${u.id}, '${u.username}')" style="color: var(--color-danger);">Hapus</button>`
+              : '<span style="font-size: 0.75rem; color: var(--color-text-muted);">Akun Aktif</span>';
+
+            return `
+              <tr>
+                <td class="mono">${u.id}</td>
+                <td class="font-bold">${u.username}</td>
+                <td>${u.name}</td>
+                <td>${roleBadge}</td>
+                <td style="text-align: right;">${deleteBtn}</td>
+              </tr>
+            `;
+          }).join('');
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    function openAddUserModal() {
+      document.getElementById('form-add-user').reset();
+      document.getElementById('modal-add-user').style.display = 'flex';
+    }
+
+    function closeAddUserModal() {
+      document.getElementById('modal-add-user').style.display = 'none';
+    }
+
+    async function submitNewUser(e) {
+      e.preventDefault();
+      const username = document.getElementById('new-user-username').value.trim();
+      const password = document.getElementById('new-user-password').value;
+      const name = document.getElementById('new-user-name').value.trim();
+      const role = document.getElementById('new-user-role').value;
+
+      try {
+        const res = await fetch('/api/auth/users', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password, name, role })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast(data.message, 'success');
+          closeAddUserModal();
+          loadUsersList();
+        } else {
+          showToast(data.message, 'error');
+        }
+      } catch (err) {
+        showToast('Gagal menambahkan pengguna.', 'error');
+      }
+    }
+
+    async function deleteUserAccount(id, uname) {
+      if (!confirm(`Apakah Anda yakin ingin menghapus akun '${uname}'?`)) return;
+      try {
+        const res = await fetch(`/api/auth/users/${id}`, { method: 'DELETE' });
+        const data = await res.json();
+        if (data.success) {
+          showToast(data.message, 'success');
+          loadUsersList();
+        } else {
+          showToast(data.message, 'error');
+        }
+      } catch (err) {
+        showToast('Gagal menghapus pengguna.', 'error');
+      }
+    }
+  </script>
+</body>
+</html>

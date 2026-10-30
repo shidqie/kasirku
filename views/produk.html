@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Produk - KasirKu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <div class="app-wrapper">
+    <!-- Desktop Sidebar -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-badge-icon">K</div>
+        <div>
+          <div class="brand-text-name">KasirKu</div>
+          <div class="brand-text-sub">Toko Kelontong Berkah</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="/" class="nav-link-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="/kasir" class="nav-link-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span>Kasir (Transaksi)</span>
+        </a>
+        <a href="/produk" class="nav-link-item active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          <span>Data Produk</span>
+        </a>
+        <a href="/stok" class="nav-link-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          <span>Persediaan & Stok</span>
+        </a>
+        <a href="/laporan" class="nav-link-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <span>Laporan Penjualan</span>
+        </a>
+        <a href="/pengaturan" class="nav-link-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <span>Pengaturan Toko</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <span class="user-name">Kasir</span>
+          <span class="user-role">Petugas Toko</span>
+        </div>
+        <button class="btn-logout" onclick="handleLogout()" title="Keluar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        </button>
+      </div>
+    </aside>
+
+    <main class="app-content">
+      <!-- Top Mobile Bar -->
+      <div class="top-mobile-bar">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div class="brand-badge-icon" style="width: 32px; height: 32px; font-size: 0.9rem;">K</div>
+          <span class="mobile-brand-title">Data Produk</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <button type="button" class="btn btn-secondary" onclick="openCameraScannerForSearch()" style="padding: 4px 10px; font-size: 0.8125rem; display: inline-flex; align-items: center; gap: 4px;" title="Scan Barcode Kamera">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            <span>Scan</span>
+          </button>
+          <button type="button" class="btn btn-primary" onclick="openAddProductModal()" style="padding: 4px 10px; font-size: 0.8125rem;">+ Produk</button>
+        </div>
+      </div>
+
+      <div class="page-container">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Manajemen Data Produk</h1>
+            <p class="page-subtitle">Kelola master barang, barcode, harga jual, dan stok kelontong.</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button type="button" class="btn btn-secondary" onclick="openAddCategoryModal()">+ Kategori</button>
+            <button type="button" class="btn btn-primary" onclick="openAddProductModal()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              Tambah Produk
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="card" style="margin-bottom: 1.25rem; padding: 1rem;">
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 240px; display: flex; gap: 8px;">
+              <input type="text" id="input-filter-search" class="form-control" placeholder="Cari nama, kode, atau barcode..." oninput="debounceLoadProducts()">
+              <button type="button" class="btn btn-secondary" id="btn-scan-filter" onclick="openCameraScannerForSearch()" title="Scan Barcode untuk Cari Barang" style="white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; padding: 0.5rem 0.875rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
+                  <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
+                  <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
+                  <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
+                  <line x1="7" y1="12" x2="17" y2="12"></line>
+                </svg>
+                <span>Scan Barcode</span>
+              </button>
+            </div>
+            <div style="width: 180px;">
+              <select id="select-filter-category" class="form-control" onchange="loadProductList()">
+                <option value="all">Semua Kategori</option>
+              </select>
+            </div>
+            <div style="width: 140px;">
+              <select id="select-filter-status" class="form-control" onchange="loadProductList()">
+                <option value="all">Semua Status</option>
+                <option value="active" selected>Aktif Saja</option>
+                <option value="inactive">Nonaktif</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Products Table -->
+        <div class="card table-card">
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Kode</th>
+                  <th>Barcode</th>
+                  <th>Nama Produk</th>
+                  <th>Kategori</th>
+                  <th class="mono">Harga Jual</th>
+                  <th>Stok</th>
+                  <th>Status</th>
+                  <th style="text-align: right;">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="product-table-body">
+                <tr><td colspan="8" style="text-align: center; padding: 2rem; color: var(--color-text-muted);">Memuat data produk...</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pagination Bar -->
+          <div id="product-pagination-container" style="display: none; padding: 0.875rem 1.25rem; border-top: 1px solid var(--color-border); justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; background: var(--color-surface);">
+            <div style="font-size: 0.8125rem; color: var(--color-text-muted);" id="product-pagination-info">
+              Menampilkan <span id="pag-start">1</span> - <span id="pag-end">10</span> dari <strong id="pag-total">0</strong> produk
+            </div>
+            <div style="display: flex; gap: 4px; align-items: center;" id="product-pagination-buttons">
+              <!-- Dynamic page buttons -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Bottom Nav -->
+      <nav class="mobile-bottom-nav">
+        <a href="/" class="mobile-tab"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg><span>Dashboard</span></a>
+        <a href="/kasir" class="mobile-tab"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span>Kasir</span></a>
+        <a href="/produk" class="mobile-tab active"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path></svg><span>Produk</span></a>
+        <a href="/stok" class="mobile-tab"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg><span>Stok</span></a>
+        <a href="/laporan" class="mobile-tab"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg><span>Laporan</span></a>
+      </nav>
+    </main>
+  </div>
+
+  <!-- MODAL: FORM PRODUK (TAMBAH / EDIT) -->
+  <div class="modal-overlay" id="modal-product" style="display: none;">
+    <div class="modal-card modal-card-lg">
+      <div class="modal-header">
+        <h2 class="modal-title" id="product-modal-title">Tambah Produk Baru</h2>
+        <button onclick="closeProductModal()" style="font-size: 1.5rem; color: var(--color-text-muted);">&times;</button>
+      </div>
+      <form id="form-product" onsubmit="saveProduct(event)">
+        <input type="hidden" id="prod-edit-id">
+        <div class="modal-body" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+          <div class="form-group">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <label class="form-label" for="prod-code" style="margin-bottom: 0;">Kode Produk *</label>
+              <button type="button" class="btn btn-secondary" onclick="generateAutoProductCode()" style="padding: 2px 8px; font-size: 0.75rem; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;" title="Generate Kode Otomatis">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                <span>Auto Generate</span>
+              </button>
+            </div>
+            <div style="display: flex; gap: 6px;">
+              <input type="text" id="prod-code" class="form-control mono" placeholder="Contoh: PRD-013" required style="font-weight: 600;">
+              <button type="button" class="btn btn-secondary" onclick="generateAutoProductCode()" title="Generate Ulang Kode Produk Otomatis" style="padding: 0.4rem 0.65rem; display: inline-flex; align-items: center; gap: 4px;" aria-label="Auto Generate Kode">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                <span>Auto</span>
+              </button>
+            </div>
+            <div style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 4px;">
+              Kode dibuat otomatis. Bisa diubah manual jika toko memiliki format kode sendiri.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="prod-barcode">Barcode Barang</label>
+            <div style="display: flex; gap: 6px;">
+              <input type="text" id="prod-barcode" class="form-control mono" placeholder="Contoh: 899..." style="flex: 1;">
+              <button type="button" class="btn btn-secondary" onclick="openCameraScannerForModal()" title="Scan Barcode via Kamera HP/Laptop" style="padding: 0.4rem 0.75rem; white-space: nowrap; font-size: 0.8125rem; display: inline-flex; align-items: center; gap: 4px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                <span>Scan</span>
+              </button>
+              <button type="button" class="btn btn-secondary" onclick="generateRandomBarcode()" title="Buat Barcode Acak Otomatis (EAN-13)" style="padding: 0.4rem 0.65rem; display: inline-flex; align-items: center; gap: 4px;" aria-label="Generate Barcode Acak">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+                <span>Acak</span>
+              </button>
+            </div>
+            <div style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 4px;">
+              Bisa di-scan via kamera, scanner USB, atau klik Acak jika produk belum berbarcode.
+            </div>
+          </div>
+
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label class="form-label" for="prod-name">Nama Produk *</label>
+            <input type="text" id="prod-name" class="form-control" placeholder="Contoh: Beras Ramos 5kg, Minyak Bimoli 1L" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="prod-category">Kategori *</label>
+            <select id="prod-category" class="form-control" required></select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="prod-base-unit">Satuan Dasar *</label>
+            <select id="prod-base-unit" class="form-control" required>
+              <option value="kg">kg (Kilogram - Pecahan)</option>
+              <option value="liter">liter (Liter - Pecahan)</option>
+              <option value="bungkus">bungkus</option>
+              <option value="pcs">pcs</option>
+              <option value="botol">botol</option>
+              <option value="renceng">renceng</option>
+              <option value="dus">dus</option>
+              <option value="sachet">sachet</option>
+            </select>
+          </div>
+
+          <div class="form-group owner-only">
+            <label class="form-label" for="prod-cost-price">Harga Beli (Modal Rp)</label>
+            <input type="number" id="prod-cost-price" class="form-control mono" placeholder="0" min="0">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="prod-sell-price">Harga Jual (Rp) *</label>
+            <input type="number" id="prod-sell-price" class="form-control mono" placeholder="0" required min="0">
+          </div>
+
+          <div class="form-group" id="group-initial-stock">
+            <label class="form-label" for="prod-stock">Stok Awal</label>
+            <input type="number" step="0.01" id="prod-stock" class="form-control mono" placeholder="0" min="0">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="prod-min-stock">Batas Minimum Stok</label>
+            <input type="number" step="0.01" id="prod-min-stock" class="form-control mono" value="5" min="0">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeProductModal()">Batal</button>
+          <button type="submit" class="btn btn-primary" id="btn-save-prod">Simpan Produk</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: TAMBAH KATEGORI -->
+  <div class="modal-overlay" id="modal-category" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 class="modal-title">Tambah Kategori</h2>
+        <button onclick="closeAddCategoryModal()" style="font-size: 1.5rem; color: var(--color-text-muted);">&times;</button>
+      </div>
+      <form id="form-category" onsubmit="saveCategory(event)">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label" for="cat-name">Nama Kategori *</label>
+            <input type="text" id="cat-name" class="form-control" placeholder="Contoh: Biskuit & Kue" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cat-desc">Keterangan (Opsional)</label>
+            <input type="text" id="cat-desc" class="form-control" placeholder="Deskripsi kategori...">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeAddCategoryModal()">Batal</button>
+          <button type="submit" class="btn btn-primary">Simpan Kategori</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: KAMERA BARCODE SCANNER -->
+  <div class="modal-overlay" id="modal-camera-scan" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 class="modal-title" id="camera-scan-title">Scan Barcode Barang</h2>
+        <button type="button" onclick="closeCameraScannerModal()" style="font-size: 1.5rem; color: var(--color-text-muted);">&times;</button>
+      </div>
+      <div class="modal-body" style="text-align: center; padding: 1.25rem;">
+        <div class="camera-viewport-wrap">
+          <video id="camera-preview-video" class="camera-preview-stream" playsinline muted autoplay></video>
+          <div id="camera-reader-box" style="display: none; width: 100%; height: 100%;"></div>
+          <div class="scan-laser-reticle" id="scan-laser-reticle">
+            <div class="scan-laser-line"></div>
+          </div>
+        </div>
+        <p id="camera-scan-status" style="font-size: 0.8125rem; color: var(--color-text-muted); margin-top: 0.75rem;">
+          Membuka kamera... Arahkan barcode barang ke dalam bingkai kamera.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeCameraScannerModal()">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js?v=2.3"></script>
+  <script src="/js/html5-qrcode.min.js?v=2.3"></script>
+  <script src="/js/barcode.js?v=2.3"></script>
+  <script>
+    let categoryList = [];
+    let allProductsList = [];
+    let currentPage = 1;
+    const pageSize = 10;
+    let debounceTimer = null;
+    let barcodeScanner = null;
+    let currentScannerTarget = 'search'; // 'search' atau 'modal'
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadCategories();
+      loadProductList();
+      initBarcodeScanner();
+    });
+
+    function initBarcodeScanner() {
+      // Listener Scanner USB / Bluetooth Fisik
+      barcodeScanner = new BarcodeScannerManager((scannedCode) => {
+        playBeep(true);
+        const modalProd = document.getElementById('modal-product');
+        const isModalOpen = modalProd && modalProd.style.display !== 'none';
+
+        if (isModalOpen) {
+          const barcodeInput = document.getElementById('prod-barcode');
+          if (barcodeInput) {
+            barcodeInput.value = scannedCode;
+            showToast(`Barcode ${scannedCode} berhasil diinput!`, 'success');
+          }
+        } else {
+          const searchInput = document.getElementById('input-filter-search');
+          if (searchInput) {
+            searchInput.value = scannedCode;
+            loadProductList();
+            showToast(`Mencari produk dengan barcode: ${scannedCode}`, 'info');
+          }
+        }
+      });
+    }
+
+    function openCameraScannerForSearch() {
+      currentScannerTarget = 'search';
+      document.getElementById('camera-scan-title').textContent = 'Scan Barcode untuk Cari Barang';
+      openCameraScannerModal();
+    }
+
+    function openCameraScannerForModal() {
+      currentScannerTarget = 'modal';
+      document.getElementById('camera-scan-title').textContent = 'Scan Barcode untuk Input Produk';
+      openCameraScannerModal();
+    }
+
+    function openCameraScannerModal() {
+      const modal = document.getElementById('modal-camera-scan');
+      const statusEl = document.getElementById('camera-scan-status');
+
+      if (!modal) return;
+      modal.style.display = 'flex';
+      statusEl.textContent = 'Membuka kamera... Arahkan barcode ke dalam bingkai';
+
+      if (!barcodeScanner) {
+        initBarcodeScanner();
+      }
+
+      barcodeScanner.startCameraScanner(
+        'camera-reader-box',
+        (scannedBarcode) => {
+          playBeep(true);
+          closeCameraScannerModal();
+          if (currentScannerTarget === 'modal') {
+            const barcodeInput = document.getElementById('prod-barcode');
+            if (barcodeInput) barcodeInput.value = scannedBarcode;
+            showToast(`Barcode ${scannedBarcode} berhasil dipindai!`, 'success');
+          } else {
+            const searchInput = document.getElementById('input-filter-search');
+            if (searchInput) {
+              searchInput.value = scannedBarcode;
+              loadProductList();
+            }
+            showToast(`Produk dengan barcode ${scannedBarcode} ditemukan!`, 'success');
+          }
+        },
+        (errMsg) => {
+          statusEl.textContent = errMsg;
+          showToast(errMsg, 'error');
+        },
+        { continuous: false }
+      );
+    }
+
+    function closeCameraScannerModal() {
+      const modal = document.getElementById('modal-camera-scan');
+      if (barcodeScanner) {
+        barcodeScanner.stopCameraScanner();
+      }
+      if (modal) modal.style.display = 'none';
+    }
+
+    function generateRandomBarcode() {
+      const randomNine = Math.floor(100000000 + Math.random() * 900000000);
+      const code = '899' + randomNine;
+      document.getElementById('prod-barcode').value = code;
+      playBeep(true);
+      showToast(`Barcode acak dibuat: ${code}`, 'info');
+    }
+
+    function debounceLoadProducts() {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        loadProductList();
+      }, 300);
+    }
+
+    async function loadCategories() {
+      try {
+        const res = await fetch('/api/products/categories');
+        const data = await res.json();
+        if (data.success) {
+          categoryList = data.data;
+
+          const filterSelect = document.getElementById('select-filter-category');
+          const modalSelect = document.getElementById('prod-category');
+
+          filterSelect.innerHTML = '<option value="all">Semua Kategori</option>';
+          modalSelect.innerHTML = '';
+
+          categoryList.forEach(c => {
+            filterSelect.innerHTML += `<option value="${c.id}">${c.name}</option>`;
+            modalSelect.innerHTML += `<option value="${c.id}">${c.name}</option>`;
+          });
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    async function loadProductList() {
+      const q = document.getElementById('input-filter-search')?.value.trim() || '';
+      const cat = document.getElementById('select-filter-category')?.value || 'all';
+      const status = document.getElementById('select-filter-status')?.value || 'all';
+
+      const tbody = document.getElementById('product-table-body');
+      tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 2rem;">Memuat data...</td></tr>';
+
+      try {
+        const url = `/api/products?q=${encodeURIComponent(q)}&category_id=${cat}&status=${status}`;
+        const res = await fetch(url);
+        const data = await res.json();
+
+        if (data.success) {
+          allProductsList = data.data || [];
+          currentPage = 1;
+          renderPaginatedProducts();
+        } else {
+          tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; color: var(--color-danger); padding: 2rem;">Gagal memuat data produk.</td></tr>';
+        }
+      } catch (err) {
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; color: var(--color-danger); padding: 2rem;">Gagal memuat data.</td></tr>';
+      }
+    }
+
+    function renderPaginatedProducts() {
+      const tbody = document.getElementById('product-table-body');
+      const pagContainer = document.getElementById('product-pagination-container');
+      const pagBtns = document.getElementById('product-pagination-buttons');
+
+      const total = allProductsList.length;
+
+      if (total === 0) {
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 2rem; color: var(--color-text-muted);">Tidak ada produk yang sesuai.</td></tr>';
+        if (pagContainer) pagContainer.style.display = 'none';
+        return;
+      }
+
+      const totalPages = Math.ceil(total / pageSize);
+      if (currentPage > totalPages) currentPage = totalPages;
+      if (currentPage < 1) currentPage = 1;
+
+      const startIndex = (currentPage - 1) * pageSize;
+      const endIndex = Math.min(startIndex + pageSize, total);
+      const currentItems = allProductsList.slice(startIndex, endIndex);
+
+      tbody.innerHTML = currentItems.map(p => {
+        const isLow = p.stock <= p.min_stock;
+        return `
+          <tr>
+            <td class="mono" style="font-weight: 600;">${p.code}</td>
+            <td class="mono" style="color: var(--color-text-muted);">${p.barcode || '-'}</td>
+            <td style="font-weight: 600;">${p.name}</td>
+            <td style="color: var(--color-text-muted);">${p.category_name || '-'}</td>
+            <td class="mono" style="font-weight: 600;">${formatRupiah(p.sell_price)}</td>
+            <td style="font-weight: 700; color: ${isLow ? 'var(--color-danger)' : 'var(--color-success)'};">
+              ${formatDecimal(p.stock)} ${p.base_unit}
+            </td>
+            <td>
+              <span class="badge ${p.is_active ? 'badge-success' : 'badge-danger'}">
+                ${p.is_active ? 'Aktif' : 'Nonaktif'}
+              </span>
+            </td>
+            <td style="text-align: right; white-space: nowrap;">
+              <button class="btn btn-secondary btn-sm" onclick='openEditProductModal(${JSON.stringify(p)})'>Edit</button>
+              <button class="btn btn-secondary btn-sm" style="color: ${p.is_active ? 'var(--color-danger)' : 'var(--color-success)'};" onclick="toggleStatus(${p.id})">
+                ${p.is_active ? 'Nonaktifkan' : 'Aktifkan'}
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      // Tampilkan kontrol pagination jika total data > 10
+      if (total > pageSize) {
+        if (pagContainer) pagContainer.style.display = 'flex';
+        document.getElementById('pag-start').textContent = startIndex + 1;
+        document.getElementById('pag-end').textContent = endIndex;
+        document.getElementById('pag-total').textContent = total;
+
+        let btnsHtml = `
+          <button type="button" class="btn btn-secondary btn-sm" style="padding: 4px 10px; font-size: 0.75rem;" onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>
+            Sebelumnya
+          </button>
+        `;
+
+        for (let i = 1; i <= totalPages; i++) {
+          btnsHtml += `
+            <button type="button" class="btn ${i === currentPage ? 'btn-primary' : 'btn-secondary'} btn-sm" style="padding: 4px 10px; min-width: 32px; font-size: 0.75rem;" onclick="goToPage(${i})">
+              ${i}
+            </button>
+          `;
+        }
+
+        btnsHtml += `
+          <button type="button" class="btn btn-secondary btn-sm" style="padding: 4px 10px; font-size: 0.75rem;" onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>
+            Selanjutnya
+          </button>
+        `;
+
+        if (pagBtns) pagBtns.innerHTML = btnsHtml;
+      } else {
+        if (pagContainer) pagContainer.style.display = 'none';
+      }
+    }
+
+    function goToPage(page) {
+      currentPage = page;
+      renderPaginatedProducts();
+    }
+
+    // Modal Product Logic
+    async function openAddProductModal() {
+      document.getElementById('form-product').reset();
+      document.getElementById('prod-edit-id').value = '';
+      document.getElementById('product-modal-title').textContent = 'Tambah Produk Baru';
+      document.getElementById('group-initial-stock').style.display = 'block';
+      document.getElementById('modal-product').style.display = 'flex';
+
+      // Auto-generate kode produk secara otomatis saat modal dibuka
+      await generateAutoProductCode();
+    }
+
+    async function generateAutoProductCode() {
+      const codeInput = document.getElementById('prod-code');
+      if (!codeInput) return;
+      codeInput.placeholder = 'Memuat kode...';
+      try {
+        const res = await fetch('/api/products/next-code');
+        const data = await res.json();
+        if (data.success && data.next_code) {
+          codeInput.value = data.next_code;
+          codeInput.placeholder = data.next_code;
+          return;
+        }
+      } catch (_) {}
+
+      // Fallback lokal jika terjadi kendala jaringan
+      let maxNum = 0;
+      const allRows = document.querySelectorAll('#product-table-body tr');
+      allRows.forEach(tr => {
+        const firstTd = tr.querySelector('td');
+        if (firstTd) {
+          const match = firstTd.textContent.trim().match(/PRD-(\d+)/i);
+          if (match) {
+            const num = parseInt(match[1], 10);
+            if (num > maxNum) maxNum = num;
+          }
+        }
+      });
+      const nextCode = `PRD-${String(maxNum + 1).padStart(3, '0')}`;
+      codeInput.value = nextCode;
+      codeInput.placeholder = nextCode;
+    }
+
+    function openEditProductModal(p) {
+      document.getElementById('prod-edit-id').value = p.id;
+      document.getElementById('prod-code').value = p.code;
+      document.getElementById('prod-barcode').value = p.barcode || '';
+      document.getElementById('prod-name').value = p.name;
+      document.getElementById('prod-category').value = p.category_id;
+      document.getElementById('prod-base-unit').value = p.base_unit;
+      document.getElementById('prod-cost-price').value = p.cost_price;
+      document.getElementById('prod-sell-price').value = p.sell_price;
+      document.getElementById('prod-min-stock').value = p.min_stock;
+      document.getElementById('group-initial-stock').style.display = 'none'; // Stok diubah lewat modul persediaan
+      document.getElementById('product-modal-title').textContent = 'Ubah Data Produk';
+      document.getElementById('modal-product').style.display = 'flex';
+    }
+
+    function closeProductModal() {
+      document.getElementById('modal-product').style.display = 'none';
+    }
+
+    async function saveProduct(e) {
+      e.preventDefault();
+      const id = document.getElementById('prod-edit-id').value;
+      const isEdit = Boolean(id);
+
+      const payload = {
+        code: document.getElementById('prod-code').value.trim(),
+        barcode: document.getElementById('prod-barcode').value.trim(),
+        name: document.getElementById('prod-name').value.trim(),
+        category_id: document.getElementById('prod-category').value,
+        base_unit: document.getElementById('prod-base-unit').value,
+        cost_price: document.getElementById('prod-cost-price').value || 0,
+        sell_price: document.getElementById('prod-sell-price').value,
+        stock: document.getElementById('prod-stock').value || 0,
+        min_stock: document.getElementById('prod-min-stock').value || 5
+      };
+
+      const btn = document.getElementById('btn-save-prod');
+      btn.disabled = true;
+
+      try {
+        const url = isEdit ? `/api/products/${id}` : '/api/products';
+        const method = isEdit ? 'PUT' : 'POST';
+
+        const res = await fetch(url, {
+          method,
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          showToast(data.message, 'success');
+          closeProductModal();
+          loadProductList();
+        } else {
+          showToast(data.message, 'error');
+        }
+      } catch (err) {
+        showToast('Gagal menyimpan produk: ' + err.message, 'error');
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    async function toggleStatus(id) {
+      try {
+        const res = await fetch(`/api/products/${id}/toggle-status`, { method: 'PATCH' });
+        const data = await res.json();
+        if (data.success) {
+          showToast(data.message, 'success');
+          loadProductList();
+        } else {
+          showToast(data.message, 'error');
+        }
+      } catch (err) {
+        showToast('Gagal mengubah status', 'error');
+      }
+    }
+
+    // Modal Category Logic
+    function openAddCategoryModal() {
+      document.getElementById('form-category').reset();
+      document.getElementById('modal-category').style.display = 'flex';
+    }
+    function closeAddCategoryModal() {
+      document.getElementById('modal-category').style.display = 'none';
+    }
+    async function saveCategory(e) {
+      e.preventDefault();
+      const name = document.getElementById('cat-name').value.trim();
+      const desc = document.getElementById('cat-desc').value.trim();
+
+      try {
+        const res = await fetch('/api/products/categories', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, description: desc })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast('Kategori berhasil ditambahkan!', 'success');
+          closeAddCategoryModal();
+          loadCategories();
+        } else {
+          showToast(data.message, 'error');
+        }
+      } catch (err) {
+        showToast('Gagal menyimpan kategori.', 'error');
+      }
+    }
+  </script>
+</body>
+</html>
